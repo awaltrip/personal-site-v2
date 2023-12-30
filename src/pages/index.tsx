@@ -1,5 +1,6 @@
-import * as React from "react"
-import type { HeadFC, PageProps } from "gatsby"
+import * as React from 'react'
+import { Link } from 'gatsby'
+import type { HeadFC, PageProps } from 'gatsby'
 
 const pageStyles = {
   color: "#232129",
@@ -142,6 +143,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <h1 style={headingStyles}>
         Welcome to my Gatsby site!
       </h1>
+      <Link to="/about">About me</Link>
       <p style={paragraphStyles}>
         I'm making this by following the Gatsby Tutorial.
       </p>
