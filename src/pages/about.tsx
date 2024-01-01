@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 
 const AboutPage: React.FC<PageProps> = () => {
   return (
-    <Layout heading="About Me">
+    <Layout heading="About me">
       <p>Hi there! I'm the proud creator of this site, which I built with Gatsby.</p>
     </Layout>
   )
@@ -13,7 +13,7 @@ const AboutPage: React.FC<PageProps> = () => {
 
 export const Head: HeadFC = () => (
   <>
-    <title>About Me</title>
+    <title>About me</title>
     <meta name="description" content="About Anna Waltrip"/>
   </>
 )

@@ -2,7 +2,8 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 
 const headingAccentStyle = {
-  color: '#663399'
+  color: '#663399',
+  fontSize: 48
 }
 
 const headingStyle = {
@@ -24,9 +25,10 @@ const paragraphStyle = {
 interface Props {
   heading: String
   children?: any
+  headingAccent?: String
 }
 
-const Layout = ({ heading, children }: Props) => {
+const Layout = ({ heading, children, headingAccent }: Props) => {
   return (
     <div style={pageStyle}>
       <nav>
@@ -36,7 +38,11 @@ const Layout = ({ heading, children }: Props) => {
         </ul>
       </nav>
       <main>
-        <h1 style={headingStyle}>{heading}</h1>
+        <h1 style={headingStyle}>
+          {heading}
+          <br />
+          <span style={headingAccentStyle}>{headingAccent}</span>
+        </h1>
         <div style={paragraphStyle}>
           {children}
         </div>

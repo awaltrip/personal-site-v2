@@ -127,8 +127,11 @@ const links = [
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <Layout heading="Welcome to my Gatsby site!">
-      <p>I'm making this by following the Gatsby Tutorial.</p>
+    <Layout 
+      heading="Hi, my name is"
+      headingAccent="Anna Waltrip"
+    >
+      <p>I'm a full-stack software engineer specializing in building exceptional user experiences on the web.</p>
     </Layout>
   )
 }
