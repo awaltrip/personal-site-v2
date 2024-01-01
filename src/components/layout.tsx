@@ -1,6 +1,26 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 
+const headingAccentStyle = {
+  color: '#663399'
+}
+
+const headingStyle = {
+  marginTop: 0,
+  marginBottom: 64,
+  maxWidth: 320
+}
+
+const pageStyle = {
+  color: '#232129',
+  padding: 96,
+  fontFamily: '-apple-system, Roboto, sans-serif, serif'
+}
+
+const paragraphStyle = {
+  marginBottom: 48
+}
+
 interface Props {
   heading: String
   children?: any
@@ -8,7 +28,7 @@ interface Props {
 
 const Layout = ({ heading, children }: Props) => {
   return (
-    <div>
+    <div style={pageStyle}>
       <nav>
         <ul>
           <li><Link to="/">Home</Link></li>
@@ -16,8 +36,10 @@ const Layout = ({ heading, children }: Props) => {
         </ul>
       </nav>
       <main>
-        <h1>{heading}</h1>
-        {children}
+        <h1 style={headingStyle}>{heading}</h1>
+        <div style={paragraphStyle}>
+          {children}
+        </div>
       </main>
       <footer>
         <img
