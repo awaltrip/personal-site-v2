@@ -4,11 +4,12 @@ const path = require('path');
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://awaltrip.netlify.app`
   },
   // https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
@@ -18,11 +19,7 @@ const config: GatsbyConfig = {
           '@pages': path.resolve(__dirname, 'src/pages'),
           '@styles': path.resolve(__dirname, 'src/styles')
         },
-        extensions: [
-          'tsx',
-          'ts',
-          'js'
-        ]
+        extensions: ['tsx', 'ts', 'jsx', 'js']
       }
     }
   ]
