@@ -1,26 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-
-const headingAccentStyle = {
-  color: '#663399',
-  fontSize: 48
-}
-
-const headingStyle = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320
-}
-
-const pageStyle = {
-  color: '#232129',
-  padding: 96,
-  fontFamily: '-apple-system, Roboto, sans-serif, serif'
-}
-
-const paragraphStyle = {
-  marginBottom: 48
-}
+import * as globalStyles from '@styles/global.module.scss'
 
 interface Props {
   heading: String
@@ -30,7 +10,7 @@ interface Props {
 
 const Layout = ({ heading, children, headingAccent }: Props) => {
   return (
-    <div style={pageStyle}>
+    <div className={globalStyles.page}>
       <nav>
         <ul>
           <li><Link to="/">Home</Link></li>
@@ -38,12 +18,12 @@ const Layout = ({ heading, children, headingAccent }: Props) => {
         </ul>
       </nav>
       <main>
-        <h1 style={headingStyle}>
+        <h1 className={globalStyles.heading}>
           {heading}
           <br />
-          <span style={headingAccentStyle}>{headingAccent}</span>
+          <span className={globalStyles.headingAccent}>{headingAccent}</span>
         </h1>
-        <div style={paragraphStyle}>
+        <div>
           {children}
         </div>
       </main>
