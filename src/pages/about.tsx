@@ -1,7 +1,6 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 import type { HeadFC, PageProps } from 'gatsby'
-import Layout from '../components/layout'
+import { Layout } from '@components'
 
 const AboutPage: React.FC<PageProps> = () => {
   return (
