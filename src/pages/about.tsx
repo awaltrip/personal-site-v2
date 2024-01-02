@@ -12,7 +12,7 @@ const AboutPage: React.FC<PageProps> = () => {
 
 export const Head: HeadFC = () => (
   <>
-    <title>About me</title>
+    <title>Anna Waltrip's Portfolio Site - About</title>
     <meta name="description" content="About Anna Waltrip"/>
   </>
 )
