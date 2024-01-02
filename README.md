@@ -1,22 +1,23 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
+  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts" target="_blank">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
   </a>
 </p>
 <h1 align="center">
-  <a href="awaltrip.netlify.com">annawaltrip.com</a> - v2
+  <a href="https://awaltrip.netlify.app" target="_blank">annawaltrip.com</a> - v2
 </h1>
 <p>
   <a href="https://app.netlify.com/sites/awaltrip/deploys" target="_blank">
-    <img src="https://api.netlify.com/api/v1/badges/1963b488-7b78-48c9-9e2d-6fb5e47ab3af/deploy-status" alt="Netlify Status" />
+    <img 
+      src="https://api.netlify.com/api/v1/badges/1963b488-7b78-48c9-9e2d-6fb5e47ab3af/deploy-status" 
+      alt="Netlify Status" />
   </a>
 </p>
-<p>
-  The second iteration of my personal website, built with <a href="https://react.dev/learn/start-a-new-react-project" target="_blank">React</a>'s <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> framework and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>.
-</p>
-<p>
-  Currently, it is still very much under construction 😊
-</p>
+
+The second iteration of my personal website, built with <a href="https://react.dev/learn/start-a-new-react-project" target="_blank">React</a>'s 
+<a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> framework and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>.
+
+Currently, it is still very much under construction 😊
 
 ## 💻 Dev setup
 
