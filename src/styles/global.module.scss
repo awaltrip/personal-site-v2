@@ -22,6 +22,12 @@
   border-radius: 4px;
 }
 
+.container {
+  color: #232129;
+  padding: 80px;
+  font-family: -apple-system, Roboto, sans-serif;
+}
+
 .description {
   color: #232129;
   font-size: 14px;
@@ -40,6 +46,17 @@
 
 .doc-list {
   padding-left: 0;
+}
+
+.heading-accent {
+  color: #663399;
+  font-size: 48px;
+}
+
+.heading {
+  margin-top: 0;
+  margin-bottom: 48px;
+  max-width: 320px;
 }
 
 .link {
@@ -61,21 +78,18 @@
   margin-bottom: 30px;
 }
 
-.heading-accent {
-  color: #663399;
-  font-size: 48px;
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
 }
 
-.heading {
-  margin-top: 0;
-  margin-bottom: 64;
-  max-width: 320;
+.nav-link-item {
+  padding-right: 2rem;
 }
 
-.page {
-  color: #232129;
-  padding: 96px;
-  font-family: -apple-system, Roboto, sans-serif;
+.nav-link-text {
+  color: black;
 }
 
 p {
