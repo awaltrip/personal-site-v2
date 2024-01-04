@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { Link, HeadFC, PageProps } from 'gatsby'
-import { Layout } from '@components'
-import * as globalStyles from '@styles/global.module.scss'
+import * as React from 'react';
+import { Link, HeadFC, PageProps } from 'gatsby';
+import { Layout } from '@components';
+import * as globalStyles from '@styles/global.module.scss';
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
@@ -20,9 +20,14 @@ const NotFoundPage: React.FC<PageProps> = () => {
         <Link to="/">Go home</Link>
       </p>
     </Layout>
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export const Head: HeadFC = () => (
+  <>
+    <title>Anna Waltrip Portfolio Site - Page Not Found</title>
+    <meta name="description" content="Anna Waltrip Portfolio Site - 404 Page Not Found"/>
+  </>
+);
 
-export const Head: HeadFC = () => <title>Not found</title>
+export default NotFoundPage;

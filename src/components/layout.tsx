@@ -1,11 +1,11 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
-import * as globalStyles from '@styles/global.module.scss'
+import * as React from 'react';
+import { Link } from 'gatsby';
+import * as globalStyles from '@styles/global.module.scss';
 
 interface Props {
-  heading: String
-  children?: any
-  headingAccent?: String
+  heading: String;
+  children?: any;
+  headingAccent?: String;
 }
 
 const Layout = ({ heading, children, headingAccent }: Props) => {
@@ -34,7 +34,7 @@ const Layout = ({ heading, children, headingAccent }: Props) => {
         />
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
