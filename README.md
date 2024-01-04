@@ -1,12 +1,4 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/" target="_blank">
-    <img alt="Gatsby" 
-      src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  <a href="https://awaltrip.netlify.app" target="_blank">annawaltrip.com</a> - v2
-</h1>
+# [annawaltrip.com](https://awaltrip.netlify.app) - v2
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/91f52fa8-e0a6-45b1-8d56-7c83bb62f580/deploy-status)](https://app.netlify.com/sites/awaltrip/deploys)
 
@@ -38,6 +30,6 @@ Currently, it's still very much under construction 😊
 
 ## 🚀 Deployment (Netlify)
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+Deploy this site with one click on [Netlify](https://app.netlify.com/signup):
 
 [<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
