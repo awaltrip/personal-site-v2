@@ -11,16 +11,18 @@ interface Props {
 const Layout = ({ heading, children, headingAccent }: Props) => {
   return (
     <div className={globalStyles.container}>
-      <nav>
-        <ul className={globalStyles.navLinks}>
-          <li className={globalStyles.navLinkItem}>
-            <Link to="/" className={globalStyles.navLinkText}>Home</Link>
-          </li>
-          <li className={globalStyles.navLinkItem}>
-            <Link to="/about" className={globalStyles.navLinkText}>About</Link>
-          </li>
-        </ul>
-      </nav>
+      <header>
+        <nav>
+          <ul className={globalStyles.navLinks}>
+            <li className={globalStyles.navLinkItem}>
+              <Link to="/" className={globalStyles.navLinkText}>Home</Link>
+            </li>
+            <li className={globalStyles.navLinkItem}>
+              <Link to="/about" className={globalStyles.navLinkText}>About</Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
       <main>
         <h1 className={globalStyles.heading}>
           {heading}

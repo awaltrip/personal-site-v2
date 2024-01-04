@@ -24,7 +24,7 @@
 
 .container {
   color: #232129;
-  padding: 80px;
+  padding: 0px 80px;
   font-family: -apple-system, Roboto, sans-serif;
 }
 
@@ -59,6 +59,12 @@
   max-width: 320px;
 }
 
+header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
 .link {
   color: #8954A8;
   font-weight: bold;
@@ -90,6 +96,13 @@
 
 .nav-link-text {
   color: black;
+  font-family: monospace;
+  font-size: 16px;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
 }
 
 p {
