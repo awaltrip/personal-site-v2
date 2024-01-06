@@ -25,7 +25,7 @@ const skills = [
     url: 'https://www.atlassian.com/microservices/microservices-architecture/kubernetes-vs-docker'
   },
   {
-    text: 'AWS - Lambda, S3, + more',
+    text: 'AWS: Lambda, S3, + more',
     url: 'https://aws.amazon.com/'
   }
 ];
