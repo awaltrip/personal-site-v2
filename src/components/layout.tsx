@@ -20,9 +20,7 @@ const Layout: React.FC<Props> = ({ heading, children, headingAccent }) => {
           <br />
           <span className={globalStyles.headingAccent}>{headingAccent}</span>
         </h1>
-        <div>
-          {children}
-        </div>
+        {children}
       </main>
       <footer className={globalStyles.container}>
         <img
