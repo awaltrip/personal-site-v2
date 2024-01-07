@@ -71,7 +71,7 @@ body {
   color: #338399;
   font-size: 34px;
   margin-top: 0;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
   max-width: 320px;
 }
 
@@ -100,7 +100,7 @@ header {
   display: grid;
   grid-template-columns: repeat(2, minmax(160px, 320px));
   grid-gap: 0 10px;
-  margin: 32px 0 0 0;
+  margin: 24px 0;
   overflow: hidden;
   padding-left: 10px;
 }

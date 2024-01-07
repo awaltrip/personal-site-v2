@@ -40,8 +40,9 @@ const AboutPage: React.FC<PageProps> = () => {
         strengths, and interests and enrolled in Tech Elevator in 2017.
       </p>
       <p>
-        After Tech Elevator, I've had the privilege of working for Nationwide and being twice promoted up to a Pod Lead role on an 
-        Agile Innovation team. (Note: "pod" here means a small autonomous group within a larger team.)
+        After Tech Elevator, I had the privilege of working for over 5 years at a Fortune 100 company on an Agile 
+        Innovation team, and being twice promoted up to a Pod Lead role. (Note: "pod" here means a small autonomous 
+        group within a larger team.)
       </p>
       <p>
         Here are some of the technologies I've worked with:
@@ -53,6 +54,11 @@ const AboutPage: React.FC<PageProps> = () => {
           </li>
         )}
       </ul>
+      <p>
+        When I'm not coding, I love traveling and doing things outdoors. I'm a weight-lifting enthusiast, having been
+        in my university's Powerlifting Club in the past. I've also been running my own side business as a pedicab 
+        (bike taxi) driver for over a decade - a great way to make a little extra cash and stay in shape!
+      </p>
     </Layout>
   );
 };
