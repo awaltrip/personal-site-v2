@@ -49,7 +49,7 @@ const AboutPage: React.FC<PageProps> = () => {
       <ul className={globalStyles.list}>
         {skills.map((skill, i) =>
           <li className={globalStyles.listItem} key={i}>
-            <a className={globalStyles.link} href={skill.url}>{skill.text}</a>
+            <a className={globalStyles.link} href={skill.url} target="_blank">{skill.text}</a>
           </li>
         )}
       </ul>
