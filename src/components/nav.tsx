@@ -13,15 +13,15 @@ const navLinks = [
   },
   {
     text: 'Skills',
-    url: '#'
+    url: '/skills'
   },
   {
     text: 'Projects',
-    url: '#'
+    url: '/projects'
   },
   {
     text: 'Contact',
-    url: '#'
+    url: '/contact'
   }
 ];
 
