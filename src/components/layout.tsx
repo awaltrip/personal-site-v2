@@ -18,6 +18,10 @@ const navLinks = [
     url: '/about'
   },
   {
+    text: 'Skills',
+    url: '#'
+  },
+  {
     text: 'Projects',
     url: '#'
   },
@@ -40,6 +44,9 @@ const Layout = ({ heading, children, headingAccent }: Props) => {
                 </Link>
               </li>
             )}
+            <div className={globalStyles.navLinkItem}>
+              <i className={`uil uil-moon ${globalStyles.navLinkText}`}></i>
+            </div>
           </ul>
         </nav>
       </header>

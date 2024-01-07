@@ -1,3 +1,5 @@
+@import 'https://unicons.iconscout.com/release/v4.0.0/css/line.css';
+
 .badge {
   color: #fff;
   background-color: #088413;
@@ -74,7 +76,8 @@ body {
 }
 
 header {
-  height: 88px;
+  box-shadow: 0 2px 3px -3px #a293b8;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: right;
@@ -104,7 +107,7 @@ header {
 
 .list-item {
   padding: 0 10px;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   &::marker {
     content: '▹';
     font-weight: bold;
@@ -113,7 +116,7 @@ header {
 }
 
 main {
-  margin: 12px 0 48px 0;
+  margin: 48px 0;
 }
 
 .nav-links {
@@ -128,10 +131,11 @@ main {
 }
 
 .nav-link-text {
-  color: black;
+  color: #36313d;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 16px;
   text-decoration: none;
+  cursor: pointer;
   &:hover,
   &:focus {
     color: #338399;
