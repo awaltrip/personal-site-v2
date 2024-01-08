@@ -9,10 +9,10 @@ Currently, it's still very much under construction 😊
 
 ## 💻 Dev setup
 
-1. Install the Gatsby CLI
-    - `npm install -g gatsby-cli`
+1. Install the latest LTS version of [Node.js](https://nodejs.org/en/download/)
 
-2. Install the latest LTS version of [Node.js](https://nodejs.org/en/download/)
+2. Install the Gatsby CLI
+    - `npm install -g gatsby-cli`
 
 3. Install dependencies
     - `npm install`
