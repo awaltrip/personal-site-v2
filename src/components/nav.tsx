@@ -37,7 +37,7 @@ const Nav: React.FC = () => {
           </li>
         )}
         <div className={globalStyles.navLinkItem}>
-          <i className={`uil uil-moon ${globalStyles.navLinkText}`}></i>
+          <i className={`uil uil-moon ${globalStyles.themeBtn}`}></i>
         </div>
       </ul>
     </nav>
