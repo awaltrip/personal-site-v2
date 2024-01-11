@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
-import { Layout }  from '@components';
+import { Layout, Seo }  from '@components';
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -12,10 +12,7 @@ const IndexPage: React.FC<PageProps> = () => {
 };
 
 export const Head: HeadFC = () => (
-  <>
-    <title>Anna Waltrip Portfolio Site - Home</title>
-    <meta name="description" content="Anna Waltrip portfolio website home page"/>
-  </>
+  <Seo pageName="Home" />
 );
 
 export default IndexPage;

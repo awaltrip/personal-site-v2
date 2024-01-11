@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
-import { Layout } from '@components';
+import { Layout, Seo } from '@components';
 
 const ProjectsPage: React.FC<PageProps> = () => {
   return (
@@ -11,10 +11,7 @@ const ProjectsPage: React.FC<PageProps> = () => {
 };
 
 export const Head: HeadFC = () => (
-  <>
-    <title>Anna Waltrip Portfolio Site - Projects</title>
-    <meta name="description" content="Anna Waltrip portfolio of projects"/>
-  </>
+  <Seo pageName="Projects" />
 );
 
 export default ProjectsPage;
