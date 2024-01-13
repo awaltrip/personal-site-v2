@@ -1,5 +1,9 @@
 @import 'https://unicons.iconscout.com/release/v4.0.0/css/line.css';
 
+a {
+  text-decoration: none;
+}
+
 .badge {
   color: #fff;
   background-color: #088413;
@@ -171,6 +175,35 @@ select {
   &:hover,
   &:focus {
     border: 0.5px solid #a293b8bf;
+  }
+}
+
+.skill-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-box-img {
+  &:hover {
+    transform: rotate(-25deg);
+  }
+}
+
+.skill-box-link {
+  @extend .link;
+  display: block;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 800px;
+  margin-top: 40px;
+  @media (max-width: 360px) {
+    gap: 1rem;
   }
 }
 

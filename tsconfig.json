@@ -29,6 +29,7 @@
     "paths": {
       "@components": ["src/components"],
       "@images": ["src/images"],
+      "@images/*": ["src/images/*"],
       "@pages": ["src/pages"],
       "@styles": ["src/styles"]
     },                                                   /* Specify a set of entries that re-map imports to additional lookup locations. */
