@@ -2,10 +2,10 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/91f52fa8-e0a6-45b1-8d56-7c83bb62f580/deploy-status)](https://app.netlify.com/sites/awaltrip/deploys)
 
-The second iteration of my personal website, built with [React](https://react.dev/learn/start-a-new-react-project)'s 
-[Gatsby](https://www.gatsbyjs.com/) framework and hosted with [Netlify](https://www.netlify.com/).
+The second iteration of my personal website, built with [Gatsby](https://www.gatsbyjs.com/), a [React](https://react.dev/learn/start-a-new-react-project)-based 
+framework, and hosted with [Netlify](https://www.netlify.com/).
 
-Currently, it's still very much under construction 😊
+Currently, it's still very much a work in progress 😊
 
 ## 💻 Dev setup
 
