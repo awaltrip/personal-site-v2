@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Angular",
+    "url": "https://angular.io/"
+  },
+  {
+    "name": "AWS Lambda",
+    "url": "https://aws.amazon.com/"
+  },
+  {
+    "name": "AWS S3",
+    "url": "https://aws.amazon.com/"
+  },
+  {
+    "name": "Docker",
+    "url": "https://www.docker.com/"
+  },
+  {
+    "name": "Gatsby",
+    "url": "https://www.gatsbyjs.com/"
+  },
+  {
+    "name": "Java",
+    "url": "https://spring.io/projects/spring-boot/"
+  }
+]
