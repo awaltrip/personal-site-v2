@@ -1,4 +1,4 @@
-# [annawaltrip.com](https://awaltrip.netlify.app) - v2
+# [annawaltrip.com](https://annawaltrip.com) - v2
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/91f52fa8-e0a6-45b1-8d56-7c83bb62f580/deploy-status)](https://app.netlify.com/sites/awaltrip/deploys)
 
