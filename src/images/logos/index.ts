@@ -1,1 +1,1 @@
-export { default as Angular } from './angular';
+export { default as Angular } from './angular.svg';
