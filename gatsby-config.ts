@@ -4,7 +4,7 @@ const path = require('path');
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    siteUrl: `https://awaltrip.netlify.app`,
+    siteUrl: `https://annawaltrip.com`,
     title: `Anna Waltrip`,
     description: `Portfolio website of Anna Waltrip, full stack software engineer. A summary of professional skills, 
       project details, and contact information.`,
