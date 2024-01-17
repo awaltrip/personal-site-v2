@@ -22,6 +22,11 @@ a {
 
 body {
   background-color: #fffefb;
+  margin-right: 80px;
+
+  @media (max-width: 1200px) {
+    margin-right: 0;
+  }
 }
 
 .code {
@@ -202,8 +207,11 @@ select {
   grid-template-columns: repeat(3, 1fr);
   max-width: 800px;
   margin-top: 40px;
-  @media (max-width: 360px) {
+  @media (max-width: 370px) {
     gap: 1rem;
+  }
+  @media (max-width: 350px) {
+    gap: 0.6rem;
   }
 }
 
