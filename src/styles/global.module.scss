@@ -1,11 +1,12 @@
 @import 'https://unicons.iconscout.com/release/v4.0.0/css/line.css';
+@import './variables.scss';
 
 a {
   text-decoration: none;
 }
 
 body {
-  background-color: #fffefb;
+  background-color: var(--bg-color);
   margin-right: 80px;
 
   @media (max-width: 1200px) {
@@ -14,17 +15,16 @@ body {
 }
 
 .code {
-  color: #8A6534;
+  color: var(--font-color-code);
   padding: 4px;
-  background-color: #FFF4DB;
+  background-color: var(--bg-color-code);
   font-size: 1.25rem;
   border-radius: 4px;
 }
 
 .container {
-  color: #36313d;
-  font-family: -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif, 
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  color: var(--font-color-primary);
+  font-family: var(--font-family-sans);
   max-width: 1000px;
   padding: 0px 144px;
 
@@ -40,12 +40,12 @@ body {
 }
 
 .heading-accent {
-  color: #663399;
+  color: var(--font-color-accent);
   font-size: 48px;
 }
 
 .heading {
-  color: #338399;
+  color: var(--font-color-secondary);
   font-size: 34px;
   margin-top: 0;
   margin-bottom: 40px;
@@ -62,9 +62,9 @@ header {
 }
 
 .link {
-  color: #8954A8;
+  color: var(--font-color-accent);
   cursor: pointer;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--font-family-mono);
   font-weight: bold;
   text-decoration: none;
   position: relative;
@@ -72,7 +72,7 @@ header {
 
   &:hover,
   &:focus {
-    color: #338399;
+    color: var(--font-color-secondary);
   }
   /* the below styles animate the link underline */
   &::before {
@@ -82,7 +82,7 @@ header {
     left: 0;
     width: 0;
     height: 0.5px;
-    background-color: #338399;
+    background-color: var(--font-color-secondary);
     transition: width 0.3s ease;
   }
   &:hover::before,
@@ -126,7 +126,7 @@ main {
 
 .nav-link-text {
   @extend .link;
-  color: #36313d;
+  color: var(--font-color-primary);
   font-weight: normal;
 }
 
@@ -180,11 +180,11 @@ select {
 }
 
 .theme-btn {
-  color: #36313d;
+  color: var(--font-color-primary);
   cursor: pointer;
   transition: color 0.3s ease;
   &:hover,
   &:focus {
-    color: #338399;
+    color: var(--font-color-secondary);
   }
 }
