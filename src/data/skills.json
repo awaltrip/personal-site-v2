@@ -1,5 +1,9 @@
 [
   {
+    "name": "A11y",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn/Accessibility/What_is_accessibility"
+  },
+  {
     "name": "Angular",
     "url": "https://angular.io/"
   },
@@ -13,6 +17,14 @@
   },
   {
     "name": "AWS Cloud Formation",
+    "url": "https://aws.amazon.com/"
+  },
+  {
+    "name": "AWS DynamoDB",
+    "url": "https://aws.amazon.com/"
+  },
+  {
+    "name": "AWS EC2",
     "url": "https://aws.amazon.com/"
   },
   {
@@ -48,6 +60,14 @@
     "url": "https://www.gatsbyjs.com/"
   },
   {
+    "name": "Git",
+    "url": "https://git-scm.com/"
+  },
+  {
+    "name": "Helm",
+    "url": "https://helm.sh/"
+  },
+  {
     "name": "HTML 5",
     "url": "https://html.com/"
   },
@@ -60,8 +80,24 @@
     "url": "https://www.javascript.com/"
   },
   {
+    "name": "Jenkins",
+    "url": "https://www.jenkins.io/"
+  },
+  {
+    "name": "Kubernetes",
+    "url": "https://kubernetes.io/"
+  },
+  {
     "name": "Laravel",
     "url": "https://laravel.com/"
+  },
+  {
+    "name": "Linux",
+    "url": "https://www.linux.com/what-is-linux/"
+  },
+  {
+    "name": "MySQL",
+    "url": "https://www.mysql.com/"
   },
   {
     "name": "Node JS",
@@ -70,6 +106,10 @@
   {
     "name": "PHP",
     "url": "https://www.php.net/"
+  },
+  {
+    "name": "PostgreSQL",
+    "url": "https://www.postgresql.org/"
   },
   {
     "name": "Postman",
@@ -88,12 +128,20 @@
     "url": "https://www.ruby-lang.org/en/"
   },
   {
+    "name": "Sass",
+    "url": "https://sass-lang.com/"
+  },
+  {
     "name": "Spring Boot",
     "url": "https://spring.io/projects/spring-boot/"
   },
   {
     "name": "Swagger",
     "url": "https://swagger.io/"
+  },
+  {
+    "name": "TDD",
+    "url": "https://testdriven.io/test-driven-development/"
   },
   {
     "name": "TypeScript",
