@@ -1,34 +1,8 @@
 import * as React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
 import { Layout, Seo } from '@components';
+import skills from '@data/aboutSkills.json';
 import * as globalStyles from '@styles/global.module.scss';
-
-const skills = [
-  {
-    text: 'Angular (TypeScript)',
-    url: 'https://angular.io/'
-  },
-  {
-    text: 'Spring Boot (Java)',
-    url: 'https://spring.io/projects/spring-boot/'
-  },
-  {
-    text: 'React / Gatsby (TS)',
-    url: 'https://www.gatsbyjs.com/'
-  },
-  {
-    text: 'Node.js (JS / TS)',
-    url: 'https://nodejs.org/en'
-  },
-  {
-    text: 'Docker + Kubernetes',
-    url: 'https://www.atlassian.com/microservices/microservices-architecture/kubernetes-vs-docker'
-  },
-  {
-    text: 'AWS: Lambda, S3, + more',
-    url: 'https://aws.amazon.com/'
-  }
-];
 
 const AboutPage: React.FC<PageProps> = () => {
   return (
