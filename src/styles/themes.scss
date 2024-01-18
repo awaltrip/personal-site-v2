@@ -1,4 +1,4 @@
-:root {
+:root, [data-theme='light'] {
   --bg-color: #fffefb;
   --bg-color-code: #FFF4DB;
   --font-color-code: #8A6534;
@@ -8,4 +8,13 @@
   --font-family-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --font-family-sans: 'Segoe UI', 'Roboto', 'Helvetica Neue', -apple-system, 'Arial', sans-serif, 
   'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+[data-theme='dark'] {
+  --bg-color: #231f27;
+  --bg-color-code: #3f3947;
+  --font-color-code: #8A6534;
+  --font-color-primary: #ecebe8;
+  --font-color-secondary: #32e6e2;
+  --font-color-accent: #a95ad6;
 }
