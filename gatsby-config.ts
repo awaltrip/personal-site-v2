@@ -1,11 +1,11 @@
 import type { GatsbyConfig } from 'gatsby';
-
-const path = require('path');
+import * as path from 'path';
 
 const config: GatsbyConfig = {
   siteMetadata: {
     siteUrl: `https://annawaltrip.com`,
     title: `Anna Waltrip`,
+    author: `Anna Waltrip`,
     description: `Portfolio website of Anna Waltrip, full stack software engineer. A summary of professional skills, 
       project details, and contact information.`,
     image: ''
@@ -24,7 +24,7 @@ const config: GatsbyConfig = {
           '@pages': path.resolve(__dirname, 'src/pages'),
           '@styles': path.resolve(__dirname, 'src/styles')
         },
-        extensions: ['tsx', 'ts', 'jsx', 'js']
+        extensions: ['tsx', 'ts']
       }
     }
   ]
