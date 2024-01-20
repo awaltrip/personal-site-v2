@@ -5,10 +5,10 @@ interface ThemeProps {
 }
 
 // initialize theme based on user's device settings
-const initTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+const initTheme = window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
 export const ThemeContext = React.createContext({
-  theme: initTheme,
+  theme: initTheme || 'light',
   updateTheme: (theme: string) => {}
 });
 
