@@ -16,8 +16,8 @@ interface Logos {
 const SkillsGrid: React.FC = () => {
   return (
     <div className={globalStyles.skillsGrid}>
-      {skills.map((skill: Skill) =>
-        <a className={globalStyles.skillBox} href={skill.url} target="_blank">
+      {skills.map((skill: Skill, i: number) =>
+        <a className={globalStyles.skillBox} href={skill.url} target="_blank" key={i}>
           <div className={globalStyles.skillBoxImg}>
             <img src={`${(logos as Logos)[skill.name.replace(/\s+/g, '')]}`} />
           </div>
