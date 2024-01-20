@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
+import { ThemeToggle } from '@components';
 import * as globalStyles from '@styles/global.module.scss';
 
 const navLinks = [
@@ -36,9 +37,7 @@ const Nav: React.FC = () => {
             </Link>
           </li>
         )}
-        <div className={globalStyles.navLinkItem}>
-          <i className={`uil uil-moon ${globalStyles.themeBtn}`}></i>
-        </div>
+        <ThemeToggle />
       </ul>
     </nav>
   );
