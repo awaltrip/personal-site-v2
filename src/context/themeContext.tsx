@@ -4,12 +4,17 @@ interface ThemeProps {
   children?: React.ReactNode;
 }
 
+type Theme = 'light' | 'dark';
+
 // initialize theme based on user's device settings
-const initTheme = window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+let initTheme: Theme = 'light';
+if (typeof window !== 'undefined') {
+  initTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
 
 export const ThemeContext = React.createContext({
-  theme: initTheme || 'light',
-  updateTheme: (theme: string) => {}
+  theme: initTheme,
+  updateTheme: (theme: Theme) => {}
 });
 
 export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
