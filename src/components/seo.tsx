@@ -8,6 +8,7 @@ interface SeoProps {
 
 interface SiteMetadata {
   title: string;
+  author: string;
   description: string;
   siteUrl: string;
   image?: string;
@@ -33,12 +34,13 @@ const getSiteMetadata = (): SiteMetadata => {
 };
 
 const Seo: React.FC<SeoProps> = ({ pageName, children }) => {
-  const { title, description, image, siteUrl: url } = getSiteMetadata();
+  const { title, author, description, image, siteUrl: url } = getSiteMetadata();
 
   return (
     <>
       <title>{`${title} - ${pageName}`}</title>
       <meta name="description" content={description} />
+      <meta name="author" content={author} />
       <meta name="image" content={image} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
