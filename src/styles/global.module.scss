@@ -7,11 +7,6 @@ a {
 
 body {
   background-color: var(--bg-color);
-  margin-right: 80px;
-
-  @media (max-width: 1200px) {
-    margin-right: 0;
-  }
 }
 
 .code {
@@ -53,12 +48,13 @@ body {
 }
 
 header {
+  @extend .container;
   box-shadow: 0 2px 3px -3px #a293b8;
   height: 72px;
   display: flex;
   align-items: center;
   justify-content: right;
-  width: 100%;
+  max-width: none;
 }
 
 .link {
@@ -95,9 +91,9 @@ header {
   display: grid;
   grid-template-columns: repeat(2, minmax(160px, 320px));
   grid-gap: 0 10px;
-  margin: 24px 0;
+  margin: 16px 0;
   overflow: hidden;
-  padding-left: 10px;
+  padding: 8px;
 }
 
 .list-item {
@@ -179,12 +175,19 @@ select {
   }
 }
 
-.theme-btn {
+.theme-toggle {
+  @extend .nav-link-item;
   color: var(--font-color-primary);
   cursor: pointer;
+  margin-right: 80px;
   transition: color 0.3s ease;
+
   &:hover,
   &:focus {
     color: var(--font-color-secondary);
+  }
+
+  @media (max-width: 1400px) {
+    margin: 0;
   }
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Nav } from '@components';
+import { Nav, ThemeToggle } from '@components';
 import * as globalStyles from '@styles/global.module.scss';
 
 interface Props {
@@ -13,6 +13,7 @@ const Layout: React.FC<Props> = ({ heading, children, headingAccent }) => {
     <>
       <header>
         <Nav />
+        <ThemeToggle />
       </header>
       <main className={globalStyles.container}>
         <h1 className={globalStyles.heading}>

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import { ThemeToggle } from '@components';
 import * as globalStyles from '@styles/global.module.scss';
 
 const navLinks = [
@@ -28,7 +27,7 @@ const navLinks = [
 
 const Nav: React.FC = () => {
   return (
-    <nav className={globalStyles.container}>
+    <nav>
       <ul className={globalStyles.navLinks}>
         {navLinks.map((navLink, i) =>
           <li className={globalStyles.navLinkItem} key={i}>
@@ -37,7 +36,6 @@ const Nav: React.FC = () => {
             </Link>
           </li>
         )}
-        <ThemeToggle />
       </ul>
     </nav>
   );

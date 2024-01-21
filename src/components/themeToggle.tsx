@@ -17,8 +17,8 @@ const ThemeToggle: React.FC = () => {
         };
 
         return (
-          <div className={globalStyles.navLinkItem} onClick={changeTheme}>
-            <i className={`uil ${iconName} ${globalStyles.themeBtn}`}></i>
+          <div className={globalStyles.themeToggle} onClick={changeTheme}>
+            <i className={`uil ${iconName}`}></i>
           </div>
         );
       }}
