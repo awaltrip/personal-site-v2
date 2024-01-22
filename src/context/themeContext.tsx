@@ -6,10 +6,12 @@ interface ThemeProps {
 
 type Theme = 'light' | 'dark';
 
-// initialize theme based on user's device settings
-let initTheme: Theme = 'light';
+let initTheme: Theme = 'dark';
 if (typeof window !== 'undefined') {
+  // initialize theme based on user's device settings
   initTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  // set initial data-theme attribute on body element -- see themes.scss
+  document.body.dataset.theme = initTheme;
 }
 
 export const ThemeContext = React.createContext({
