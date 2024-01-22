@@ -8,7 +8,9 @@ const ThemeToggle: React.FC = () => {
       {({ theme, updateTheme }) => {
 
         // set data-theme attribute on body element -- see themes.scss
-        document.body.dataset.theme = theme; 
+        if (typeof document !== 'undefined') {
+          document.body.dataset.theme = theme;
+        }
 
         const iconName = (theme === 'light' ? 'uil-moon' : 'uil-sun');
 
