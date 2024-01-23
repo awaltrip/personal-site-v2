@@ -19,7 +19,9 @@ const SkillsGrid: React.FC = () => {
       {skills.map((skill: Skill, i: number) =>
         <a className={globalStyles.skillBox} href={skill.url} target="_blank" key={i}>
           <div className={globalStyles.skillBoxImg}>
-            <img src={`${(logos as Logos)[skill.name.replace(/\s+/g, '')]}`} />
+            <img alt={`${skill.name} logo`}
+              src={`${(logos as Logos)[skill.name.replace(/\s+/g, '')]}`}
+            />
           </div>
           <span className={globalStyles.skillBoxLink}>
             {skill.name}

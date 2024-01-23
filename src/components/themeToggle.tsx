@@ -20,7 +20,13 @@ const ThemeToggle: React.FC = () => {
         };
 
         return (
-          <div className={globalStyles.themeToggle} onClick={changeTheme}>
+          <div className={globalStyles.themeToggle}
+            role="button"
+            tabIndex={0}
+            aria-label={`Toggle ${theme === 'light' ? 'dark' : 'light'} mode`}
+            onClick={changeTheme}
+            onKeyDown={event => { if (event.key === 'Enter') changeTheme(); }}
+          >
             <i className={`uil ${iconName}`}></i>
           </div>
         );

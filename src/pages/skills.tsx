@@ -7,8 +7,8 @@ const SkillsPage: React.FC<PageProps> = () => {
   return (
     <Layout heading="Skills">
       <p>Here is the full list of my technical skills.</p>
-      <p>
-        Sort by:
+      <label>
+        Sort skills by:
         <select onChange={() => console.log('dropdown onChange') }>
           <option key="alphabetical" value="Alphabetical">
             Alphabetical
@@ -17,7 +17,7 @@ const SkillsPage: React.FC<PageProps> = () => {
             Proficiency level
           </option>
         </select>
-      </p>
+      </label>
       <SkillsGrid />
     </Layout>
   );
