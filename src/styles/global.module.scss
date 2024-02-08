@@ -34,6 +34,11 @@ body {
   }
 }
 
+footer {
+  @extend .container;
+  font-size: 14px;
+}
+
 .heading-accent {
   color: var(--font-color-accent);
   font-size: 48px;
@@ -106,7 +111,7 @@ header {
 }
 
 main {
-  margin: 48px 0;
+  margin: 64px 0;
 }
 
 .nav-links {
