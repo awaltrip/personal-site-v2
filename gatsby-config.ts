@@ -8,7 +8,7 @@ const config: GatsbyConfig = {
     author: `Anna Waltrip`,
     description: `Portfolio website of Anna Waltrip, full stack software engineer. A summary of professional skills, 
       project details, and contact information.`,
-    image: ''
+    image: 'src/images/thumbnail.PNG'
   },
   graphqlTypegen: true, // https://gatsby.dev/graphql-typegen
   plugins: [
