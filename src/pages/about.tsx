@@ -7,7 +7,7 @@ import * as globalStyles from '@styles/global.module.scss';
 const AboutPage: React.FC<PageProps> = () => {
   return (
     <Layout heading="About me">
-      <p>Hi there! My name is Anna and I love to build delightful user experiences on the internet.</p>
+      <p>Hi there! I'm Anna and I love to build things on the web.</p>
       <p>
         My interest in coding began back in the heydays of MySpace and Tumblr, creating my own custom profile themes.
         Engineering wasn't on my radar when I entered college, but I eventually connected the dots of my experiences,

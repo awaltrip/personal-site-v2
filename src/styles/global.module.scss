@@ -41,7 +41,11 @@ footer {
 
 .heading-accent {
   color: var(--font-color-accent);
-  font-size: 48px;
+  font-size: 56px;
+
+  @media (max-width: 480px) {
+    font-size: 40px;
+  }
 }
 
 .heading {
