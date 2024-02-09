@@ -24,7 +24,7 @@ const Layout: React.FC<Props> = ({ heading, children, headingAccent }) => {
         {children}
       </main>
       <footer className={globalStyles.container}>
-        <a className={globalStyles.link} href="https://github.com/awaltrip/personal-site-v2">
+        <a className={globalStyles.link} href="https://github.com/awaltrip/personal-site-v2" target="_blank">
           <i className={`uil uil-copyright`}></i> 2024 
           Designed & built by Anna Waltrip
         </a>
