@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ThemeContext } from '@context/themeContext';
-import * as globalStyles from '@styles/global.module.scss';
+import * as styles from '@styles/global.module.scss';
 
 const ThemeToggle: React.FC = () => {
 
@@ -20,7 +20,7 @@ const ThemeToggle: React.FC = () => {
         };
 
         return (
-          <div className={globalStyles.themeToggle}
+          <div className={styles.themeToggle}
             role="button"
             tabIndex={0}
             aria-label={`Toggle ${theme === 'light' ? 'dark' : 'light'} mode`}

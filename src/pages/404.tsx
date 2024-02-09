@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link, HeadFC, PageProps } from 'gatsby';
 import { Layout } from '@components';
-import * as globalStyles from '@styles/global.module.scss';
+import * as styles from '@styles/global.module.scss';
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
@@ -12,7 +12,7 @@ const NotFoundPage: React.FC<PageProps> = () => {
         {process.env.NODE_ENV === "development" ? (
           <>
             <br />
-            Try creating a page in <code className={globalStyles.code}>src/pages/</code>.
+            Try creating a page in <code className={styles.code}>src/pages/</code>.
             <br />
           </>
         ) : null}

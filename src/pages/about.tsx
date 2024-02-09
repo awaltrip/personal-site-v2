@@ -2,7 +2,7 @@ import * as React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
 import { Layout, Seo } from '@components';
 import skills from '@data/aboutSkills.json';
-import * as globalStyles from '@styles/global.module.scss';
+import * as styles from '@styles/global.module.scss';
 
 const AboutPage: React.FC<PageProps> = () => {
   return (
@@ -21,10 +21,10 @@ const AboutPage: React.FC<PageProps> = () => {
       <p>
         Here are some of the technologies I've worked with:
       </p>
-      <ul className={globalStyles.list}>
+      <ul className={styles.list}>
         {skills.map((skill, i) =>
-          <li className={globalStyles.listItem} key={i}>
-            <a className={globalStyles.link} href={skill.url} target="_blank">{skill.text}</a>
+          <li className={styles.listItem} key={i}>
+            <a className={styles.link} href={skill.url} target="_blank">{skill.text}</a>
           </li>
         )}
       </ul>

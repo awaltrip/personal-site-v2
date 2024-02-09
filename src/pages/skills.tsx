@@ -1,7 +1,6 @@
 import * as React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
 import { Layout, Seo, SkillsGrid } from '@components';
-import * as globalStyles from '@styles/global.module.scss';
 
 const SkillsPage: React.FC<PageProps> = () => {
   return (

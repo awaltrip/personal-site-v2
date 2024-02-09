@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import * as globalStyles from '@styles/global.module.scss';
+import * as styles from '@styles/global.module.scss';
 
 const navLinks = [
   {
@@ -28,10 +28,10 @@ const navLinks = [
 const Nav: React.FC = () => {
   return (
     <nav>
-      <ul className={globalStyles.navLinks}>
+      <ul className={styles.navLinks}>
         {navLinks.map((navLink, i) =>
-          <li className={globalStyles.navLinkItem} key={i}>
-            <Link to={navLink.url} className={globalStyles.navLinkText}>
+          <li className={styles.navLinkItem} key={i}>
+            <Link to={navLink.url} className={styles.navLinkText}>
               {navLink.text}
             </Link>
           </li>

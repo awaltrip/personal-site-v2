@@ -1,7 +1,7 @@
 import * as React from 'react';
 import skills from '@data/skills.json';
 import * as logos from '@images/logos';
-import * as globalStyles from '@styles/global.module.scss';
+import * as styles from '@styles/global.module.scss';
 
 interface Skill {
   name: string;
@@ -15,15 +15,15 @@ interface Logos {
 
 const SkillsGrid: React.FC = () => {
   return (
-    <div className={globalStyles.skillsGrid}>
+    <div className={styles.skillsGrid}>
       {skills.map((skill: Skill, i: number) =>
-        <a className={globalStyles.skillBox} href={skill.url} target="_blank" key={i}>
-          <div className={globalStyles.skillBoxImg}>
+        <a className={styles.skillBox} href={skill.url} target="_blank" key={i}>
+          <div className={styles.skillBoxImg}>
             <img alt={`${skill.name} logo`}
               src={`${(logos as Logos)[skill.name.replace(/\s+/g, '')]}`}
             />
           </div>
-          <span className={globalStyles.skillBoxLink}>
+          <span className={styles.skillBoxLink}>
             {skill.name}
           </span>
         </a>
