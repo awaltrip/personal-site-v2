@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { graphql, useStaticQuery, type HeadFC, type PageProps } from 'gatsby';
 import { getImage, IGatsbyImageData } from 'gatsby-plugin-image';
-import { Layout, Seo } from '@components';
+import { Carousel, Layout, Seo } from '@components';
 import * as styles from '@styles/global.module.scss';
 
 interface Edge {
@@ -54,6 +54,7 @@ const ProjectsPage: React.FC<PageProps> = () => {
       <p>These are some of the web applications and software systems I've built from scratch.<br/><br/></p>
       <section role="contentinfo" aria-labelledby="project">
         <h2 id="project">Apple Wallet Insurance Card</h2>
+        <Carousel images={images} />
         <p>
           Back-end Spring Boot (Java) service which generates a member's auto insurance card (Proof of Insurance) 
           as an Apple Wallet pass and distributes the pass to a client application as a downloadable file. Pass 
