@@ -44,6 +44,10 @@
     "url": "https://getbootstrap.com/"
   },
   {
+    "name": "Concourse CI",
+    "url": "https://concourse-ci.org/"
+  },
+  {
     "name": "CSS 3",
     "url": "https://developer.mozilla.org/en-US/docs/Web/CSS"
   },
@@ -62,6 +66,10 @@
   {
     "name": "Git",
     "url": "https://git-scm.com/"
+  },
+  {
+    "name": "GraphQL",
+    "url": "https://graphql.org/"
   },
   {
     "name": "Helm",
