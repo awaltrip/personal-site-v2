@@ -52,21 +52,23 @@ const ProjectsPage: React.FC<PageProps> = () => {
   return (
     <Layout heading="Things I've built">
       <p>These are some of the web applications and software systems I've built from scratch.<br/><br/></p>
-      <h2>Apple Wallet Insurance Card</h2>
-      <p>
-        Back-end Spring Boot (Java) service which generates a member's auto insurance card (Proof of Insurance)
-        as an Apple Wallet pass and distributes the pass to a client application as a downloadable file. Pass 
-        includes clickable links which route to the Nationwide website or mobile app depending if app is installed
-        on user's device.
-      </p>
-      <ul className={styles.projectSkills}>
-        <li>Spring Boot</li>
-        <li>Apple Passkit</li>
-        <li>Apigee</li>
-        <li>Docker</li>
-        <li>K8s</li>
-        <li>AWS</li>
-      </ul>
+      <section role="contentinfo" aria-labelledby="project">
+        <h2 id="project">Apple Wallet Insurance Card</h2>
+        <p>
+          Back-end Spring Boot (Java) service which generates a member's auto insurance card (Proof of Insurance) 
+          as an Apple Wallet pass and distributes the pass to a client application as a downloadable file. Pass 
+          includes clickable links which route to the Nationwide website or mobile app depending if app is installed
+          on user's device.
+        </p>
+        <ul className={styles.projectSkills}>
+          <li>Spring Boot</li>
+          <li>Apple Passkit</li>
+          <li>Apigee</li>
+          <li>Docker</li>
+          <li>K8s</li>
+          <li>AWS</li>
+        </ul>
+      </section>
       <br/><br/><p>(This page is a work in progress - more coming soon)</p>
     </Layout>
   );
