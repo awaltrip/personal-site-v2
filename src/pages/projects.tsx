@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { graphql, useStaticQuery, type HeadFC, type PageProps } from 'gatsby';
-import { getImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { getImage, GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { Carousel, Layout, Seo } from '@components';
 import * as styles from '@styles/global.module.scss';
 
@@ -46,6 +46,21 @@ const getImages = (): IGatsbyImageData[] => {
   return (images as IGatsbyImageData[]) || [];
 };
 
+const openModal = (): void => {
+  document.getElementById('modal')!.style.display = 'block';
+};
+
+const closeModal = (): void => {
+  document.getElementById('modal')!.style.display = 'none';
+}
+
+window.onclick = (event): void => {
+  const modal = document.getElementById('modal');
+  if (event.target == modal) {
+    modal!.style.display = 'none';
+  }
+}
+
 const ProjectsPage: React.FC<PageProps> = () => {
   const images = getImages();
 
@@ -53,22 +68,36 @@ const ProjectsPage: React.FC<PageProps> = () => {
     <Layout heading="Things I've built">
       <p>These are some of the web applications and software systems I've built from scratch.<br/><br/></p>
       <section role="contentinfo" aria-labelledby="project">
-        <h2 id="project">Apple Wallet Insurance Card</h2>
-        <Carousel images={images} />
-        <p>
-          Back-end Spring Boot (Java) service which generates a member's auto insurance card (Proof of Insurance) 
-          as an Apple Wallet pass and distributes the pass to a client application as a downloadable file. Pass 
-          includes clickable links which route to the Nationwide website or mobile app depending if app is installed
-          on user's device.
-        </p>
-        <ul className={styles.projectSkills}>
-          <li>Spring Boot</li>
-          <li>Apple Passkit</li>
-          <li>Apigee</li>
-          <li>Docker</li>
-          <li>K8s</li>
-          <li>AWS</li>
-        </ul>
+        <div className={styles.projectContent}>
+          <h2 id="project">Apple Wallet Insurance Card</h2>
+          <p>
+            Back-end Spring Boot (Java) service which generates a member's auto insurance card (Proof of Insurance) 
+            as an Apple Wallet pass and distributes the pass to a client application as a downloadable file. Pass 
+            includes clickable links which route to the Nationwide website or mobile app depending if app is installed
+            on user's device.
+          </p>
+          <ul className={styles.projectSkills}>
+            <li>Spring Boot</li>
+            <li>Apple Passkit</li>
+            <li>Apigee</li>
+            <li>Docker</li>
+            <li>K8s</li>
+            <li>AWS</li>
+          </ul>
+        </div>
+        <div className={styles.projectImg} onClick={openModal}>
+          <div className={styles.projectImgOverlay}></div>
+          <GatsbyImage
+            alt="project"
+            image={images[0]}
+          />
+        </div>
+        <div id="modal" className={styles.modal}>
+          <div className={styles.modalContent}>
+            <span className={styles.modalClose} onClick={closeModal}>&times;</span>
+            <Carousel images={images} />
+          </div>
+        </div>
       </section>
       <br/><br/><p>(This page is a work in progress - more coming soon)</p>
     </Layout>

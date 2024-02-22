@@ -9,6 +9,17 @@ body {
   background-color: var(--bg-color);
 }
 
+.carousel {
+  width: 100%;
+  margin: auto;
+}
+
+.carousel-image {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .code {
   color: var(--font-color-code);
   padding: 4px;
@@ -118,6 +129,49 @@ main {
   margin: 64px 0;
 }
 
+.modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  display: none;
+  left: 5%;
+  right: 10%;
+  top: 5%;
+  min-height: 90%;
+  overflow: auto;
+  position: absolute;
+  z-index: 99;
+
+  @media (max-width: 1200px) {
+    right: 5%;
+  }
+}
+
+.modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  color: var(--font-color-accent);
+  font-size: 40px;
+  font-weight: bold;
+  height: 64px;
+  width: 100%;
+
+  &:hover,
+  &:focus {
+    color: var(--font-color-secondary);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    height: 56px;
+  }
+}
+
+.modal-content {
+  padding: 0 5%;
+}
+
 .nav-links {
   display: flex;
   justify-content: right;
@@ -139,8 +193,58 @@ p {
   line-height: 150%;
 }
 
-.project-image {
+.project-img {
+  border-radius: 8px;
+  max-height: 400px;
   max-width: 600px;
+  overflow: hidden;
+
+  .project-img-overlay {
+    background-color: var(--bg-color-accent);
+    border-radius: 8px;
+    position: absolute;
+    height: 400px;
+    width: calc(100% - 112px);
+    max-width: 600px;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+
+    @media (max-width: 860px) {
+      width: calc(100% - 240px);
+    }
+    @media (max-width: 768px) {
+      width: calc(100% - 112px);
+    }
+    @media (max-width: 480px) {
+      width: calc(100% - 64px);
+      height: 256px;
+    }
+  }
+
+  img {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    transition: -webkit-filter 0.3s ease;
+  }
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+
+    .project-img-overlay {
+      background-color: transparent;
+    }
+
+    img {
+      filter: none;
+      -webkit-filter: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    height: 256px;
+  }
 }
 
 .project-skills {

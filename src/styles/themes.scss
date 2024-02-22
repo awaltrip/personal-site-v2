@@ -1,5 +1,6 @@
 :root, [data-theme='light'] {
   --bg-color: #fffefb;
+  --bg-color-accent: rgba(137, 84, 168, 0.6);
   --bg-color-code: #FFF4DB;
   --font-color-code: #8A6534;
   --font-color-primary: #36313d;
@@ -12,6 +13,7 @@
 
 [data-theme='dark'] {
   --bg-color: #231f27;
+  --bg-color-accent: rgba(191, 111, 238, 0.6);
   --bg-color-code: #3f3947;
   --font-color-code: #8A6534;
   --font-color-primary: #ecebe8;

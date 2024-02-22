@@ -15,8 +15,8 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
   const handleDotClick = (i: number) => setIndex(i);
 
   return (
-    <div className="carousel">
-      <GatsbyImage className={styles.projectImage}
+    <div className={styles.carousel}>
+      <GatsbyImage className={styles.carouselImage}
         alt="project"
         key={index}
         image={images[index]}
