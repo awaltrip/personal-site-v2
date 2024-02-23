@@ -67,16 +67,19 @@ const ProjectsPage: React.FC<PageProps> = () => {
   return (
     <Layout heading="Things I've built">
       <p>These are some of the web applications and software systems I've built from scratch.<br/><br/></p>
-      <section role="contentinfo" aria-labelledby="project">
+      <section role="contentinfo" aria-labelledby="project" className={styles.projectSection}>
         <div className={styles.projectContent}>
           <h2 id="project">Apple Wallet Insurance Card</h2>
-          <p>
+          <p className={styles.projectDescription}>
             Back-end Spring Boot (Java) service which generates a member's auto insurance card (Proof of Insurance) 
             as an Apple Wallet pass and distributes the pass to a client application as a downloadable file. Pass 
             includes clickable links which route to the Nationwide website or mobile app depending if app is installed
-            on user's device.
+            on user's device.<br/><br/>
+            All code, design, and logos used in this project are owned by <a className={styles.link} target="_blank" 
+              href="https://www.nationwide.com/">Nationwide</a>.
           </p>
           <ul className={styles.projectSkills}>
+            <li>Java</li>
             <li>Spring Boot</li>
             <li>Apple Passkit</li>
             <li>Apigee</li>
@@ -84,6 +87,14 @@ const ProjectsPage: React.FC<PageProps> = () => {
             <li>K8s</li>
             <li>AWS</li>
           </ul>
+          <p className={styles.projectLinks}>
+            <a href="#">
+              <i className={`uil uil-github-alt`}></i>
+            </a>
+            <a href="https://policyservicing.nationwide.com/#/qid/search" target="_blank">
+              <i className={`uil uil-external-link-alt`}></i>
+            </a>
+          </p>
         </div>
         <div className={styles.projectImg} onClick={openModal}>
           <div className={styles.projectImgOverlay}></div>

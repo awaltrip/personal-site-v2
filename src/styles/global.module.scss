@@ -48,6 +48,7 @@ body {
 footer {
   @extend .container;
   font-size: 14px;
+  margin-bottom: 40px;
 }
 
 .heading-accent {
@@ -85,6 +86,7 @@ header {
   text-decoration: none;
   position: relative;
   transition: color 0.3s ease;
+  pointer-events: all;
 
   &:hover,
   &:focus {
@@ -193,32 +195,45 @@ p {
   line-height: 150%;
 }
 
+.project-content {
+  max-width: 600px;
+  margin-right: -400px;
+  padding-top: 16px;
+  pointer-events: none;
+  width: 100%;
+  z-index: 2;
+
+  @media(max-width: 1200px) {
+    padding-top: 8px;
+  }
+}
+
+.project-description {
+  background-color: var(--bg-color-secondary);
+  border-radius: 5px;
+  padding: 32px;
+
+  a {
+    font-family: var(--font-family-sans);
+  }
+}
+
 .project-img {
-  border-radius: 8px;
+  border-radius: 5px;
   max-height: 400px;
   max-width: 600px;
+  position: relative;
+  width: 100%;
   overflow: hidden;
 
   .project-img-overlay {
     background-color: var(--bg-color-accent);
-    border-radius: 8px;
+    border-radius: 5px;
     position: absolute;
-    height: 400px;
-    width: calc(100% - 112px);
-    max-width: 600px;
+    height: 100%;
+    width: 100%;
     z-index: 1;
     transition: background-color 0.3s ease;
-
-    @media (max-width: 860px) {
-      width: calc(100% - 240px);
-    }
-    @media (max-width: 768px) {
-      width: calc(100% - 112px);
-    }
-    @media (max-width: 480px) {
-      width: calc(100% - 64px);
-      height: 256px;
-    }
   }
 
   img {
@@ -242,17 +257,50 @@ p {
     }
   }
 
+  @media(max-width: 1200px) {
+    max-width: 520px;
+    height: 360px;
+  }
   @media (max-width: 480px) {
     height: 256px;
   }
 }
 
+.project-links {
+  font-size: 24px;
+  margin: 8px 0;
+
+  i {
+    color: var(--font-color-primary);
+    cursor: pointer;
+    margin-left: 8px;
+    margin-right: 16px;
+    pointer-events: all;
+    transition: color 0.3s ease;
+
+    &:hover,
+    &:focus {
+      color: var(--font-color-secondary);
+    }
+  }
+
+  a:nth-child(2) {
+    i { font-size: 26px; }
+  }
+}
+
+.project-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0;
+}
+
 .project-skills {
   display: flex;
   flex-wrap: wrap;
-  // justify-content: 
   font-family: var(--font-family-mono);
   font-size: 14px;
+  max-width: 400px;
   padding-left: 1rem;
 
   @media (max-width: 480px) {
