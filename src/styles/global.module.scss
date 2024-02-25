@@ -393,18 +393,31 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+  max-width: 176px;
 
-.skill-box-img {
-  &:hover {
-    transform: rotate(-25deg);
+  .skill-box-img {
+    transform: none;
+    transition: transform 0.3s ease;
   }
-}
+  .skill-box-link {
+    @extend .link;
+    display: block;
+    text-align: center;
+  }
 
-.skill-box-link {
-  @extend .link;
-  display: block;
-  text-align: center;
+  &:hover, 
+  &:focus {
+    .skill-box-img {
+      transform: rotate(-25deg);
+    }
+    .skill-box-link {
+      color: var(--font-color-secondary);
+    }
+  }
+  &:hover .skill-box-link::before,
+  &:focus .skill-box-link::before {
+    width: 100%;
+  }
 }
 
 .skills-grid {
