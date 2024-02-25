@@ -17,7 +17,7 @@ const SkillsGrid: React.FC = () => {
   return (
     <div className={styles.skillsGrid}>
       {skills.map((skill: Skill, i: number) =>
-        <a className={styles.skillBox} href={skill.url} target="_blank" key={i}>
+        <a key={i} className={styles.skillBox} href={skill.url} target="_blank" rel="noopener noreferrer">
           <div className={styles.skillBoxImg}>
             <img alt={`${skill.name} logo`}
               src={`${(logos as Logos)[skill.name.replace(/\s+/g, '')]}`}
