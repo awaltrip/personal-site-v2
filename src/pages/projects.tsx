@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { graphql, useStaticQuery, type HeadFC, type PageProps } from 'gatsby';
 import { getImage, GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Carousel, Layout, Seo } from '@components';
 import * as styles from '@styles/global.module.scss';
 
@@ -46,22 +47,38 @@ const getImages = (): IGatsbyImageData[] => {
   return (images as IGatsbyImageData[]) || [];
 };
 
-const openModal = (): void => {
-  document.getElementById('modal')!.style.display = 'block';
+const modalVariants = {
+  bottom: {
+    y: '-100%',
+    opacity: 0
+  },
+  visible: {
+    y: '0',
+    opacity: 1,
+    transition: {
+      duration: 0.3
+    }
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.8,
+    transition: {
+      duration: 0.2
+    }
+  }
 };
 
-const closeModal = (): void => {
-  document.getElementById('modal')!.style.display = 'none';
-}
-
-window.onclick = (event): void => {
-  const modal = document.getElementById('modal');
-  if (event.target == modal) {
-    modal!.style.display = 'none';
-  }
-}
-
 const ProjectsPage: React.FC<PageProps> = () => {
+
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  window.onclick = (event): void => {
+    const modal = document.getElementById('modal');
+    if (event.target == modal) {
+      setIsModalOpen(false);
+    }
+  }
+
   const images = getImages();
 
   return (
@@ -76,7 +93,7 @@ const ProjectsPage: React.FC<PageProps> = () => {
             includes clickable links which route to the Nationwide website or mobile app depending if app is installed
             on user's device.<br/><br/>
             All code, design, and logos used in this project are owned by <a className={styles.link} target="_blank" 
-              href="https://www.nationwide.com/">Nationwide</a>.
+              href="https://www.nationwide.com/" rel="noopener noreferrer">Nationwide</a>.
           </p>
           <ul className={styles.projectSkills}>
             <li>Java</li>
@@ -91,24 +108,32 @@ const ProjectsPage: React.FC<PageProps> = () => {
             <a href="#">
               <i className={`uil uil-github-alt`}></i>
             </a>
-            <a href="https://policyservicing.nationwide.com/#/qid/search" target="_blank">
+            <a href="https://policyservicing.nationwide.com/#/qid/search" rel="noopener noreferrer" target="_blank">
               <i className={`uil uil-external-link-alt`}></i>
             </a>
           </p>
         </div>
-        <div className={styles.projectImg} onClick={openModal}>
+        <div className={styles.projectImg} onClick={() => setIsModalOpen(true)}>
           <div className={styles.projectImgOverlay}></div>
           <GatsbyImage
             alt="project"
             image={images[0]}
           />
         </div>
-        <div id="modal" className={styles.modal}>
-          <div className={styles.modalContent}>
-            <span className={styles.modalClose} onClick={closeModal}>&times;</span>
-            <Carousel images={images} />
-          </div>
-        </div>
+        <AnimatePresence>
+          {isModalOpen && (<motion.div
+            className={styles.modal}
+            variants={modalVariants}
+            initial="bottom"
+            animate="visible"
+            exit="exit"
+          >
+            <div className={styles.modalContent}>
+              <span className={styles.modalClose} onClick={() => setIsModalOpen(false)}>&times;</span>
+              <Carousel images={images} />
+            </div>
+          </motion.div>)}
+        </AnimatePresence>
       </section>
       <br/><br/><p>(This page is a work in progress - more coming soon)</p>
     </Layout>
