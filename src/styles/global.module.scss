@@ -27,7 +27,7 @@ body {
 }
 
 .dot {
-  background-color: var(--font-color-primary);
+  background-color: #ecebe8;
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -75,7 +75,7 @@ body {
 }
 
 .carousel-image {
-  width: 100%;
+  display: block;
   max-width: 800px;
   margin: 0 auto;
 
@@ -196,7 +196,7 @@ main {
 }
 
 .modal {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 8px;
   display: none;
   left: 5%;

@@ -29,21 +29,21 @@ const getImageData = (): Edge[] => {
             id
             name
             childImageSharp {
-              gatsbyImageData(transformOptions: {fit: FILL})
+              gatsbyImageData
             }
           }
         }
       }
     }
   `);
-  console.log('GRAPHQL DATA: ', data);
   return data?.allFile.edges;
 };
 
 const getImages = (): IGatsbyImageData[] => {
   const imageEdges = getImageData();
-  const images = imageEdges?.map((edge: Edge) => getImage(edge.node))
-    .filter(image => typeof image != 'undefined');
+  const images = imageEdges?.sort((a, b) => (a.node?.name > b.node?.name) ? 1 : -1)
+    .map((edge: Edge) => getImage(edge.node))
+    .filter(image => typeof image !== 'undefined');
   return (images as IGatsbyImageData[]) || [];
 };
 
@@ -72,12 +72,13 @@ const ProjectsPage: React.FC<PageProps> = () => {
 
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
-  window.onclick = (event): void => {
+  if (typeof window !== 'undefined') window.onclick = (event: MouseEvent): void => {
     const modal = document.getElementById('modal');
-    if (event.target == modal) {
+    if (modal && isModalOpen && !modal.contains(event.target as Node)) {
+      event.preventDefault();
       setIsModalOpen(false);
     }
-  }
+  };
 
   const images = getImages();
 
@@ -113,7 +114,7 @@ const ProjectsPage: React.FC<PageProps> = () => {
             </a>
           </p>
         </div>
-        <div className={styles.projectImg} onClick={() => setIsModalOpen(true)}>
+        <div className={styles.projectImg} onClick={(event) => {event.stopPropagation(); setIsModalOpen(true);}}>
           <div className={styles.projectImgOverlay}></div>
           <GatsbyImage
             alt="project"
@@ -122,6 +123,7 @@ const ProjectsPage: React.FC<PageProps> = () => {
         </div>
         <AnimatePresence>
           {isModalOpen && (<motion.div
+            id="modal"
             className={styles.modal}
             variants={modalVariants}
             initial="bottom"
