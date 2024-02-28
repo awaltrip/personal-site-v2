@@ -1,0 +1,118 @@
+.carousel {
+  width: 100%;
+  margin: auto;
+}
+
+.carousel-directions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel-indicators {
+  margin: 24px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dot {
+  background-color: #ecebe8;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.active {
+  background-color: var(--font-color-accent);
+
+  &:hover {
+    cursor: auto;
+  }
+}
+
+.carousel-left,
+.carousel-right {
+  background-color: var(--bg-color-accent);
+  border-radius: 50%;
+  padding: 10px 6px 6px 12px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 2%;
+  height: 24px;
+  width: 24px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.carousel-left {
+  left: 5%;
+
+  svg {
+    margin-left: 10%;
+  }
+}
+
+.carousel-right {
+  right: 5%;
+}
+
+.carousel-image {
+  display: block !important;
+  max-width: 800px;
+  margin: 0 auto;
+
+  img {
+    border-radius: 8px;
+  }
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  display: none;
+  left: 5%;
+  right: 10%;
+  top: 5%;
+  min-height: 90%;
+  overflow: auto;
+  position: absolute;
+  z-index: 99;
+
+  @media (max-width: 1200px) {
+    right: 5%;
+  }
+}
+
+.modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  color: var(--font-color-accent);
+  font-size: 40px;
+  font-weight: bold;
+  height: 64px;
+  width: 100%;
+  transition: color 0.3s ease;
+
+  &:hover,
+  &:focus {
+    color: var(--font-color-secondary);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    height: 56px;
+  }
+}
+
+.modal-content {
+  padding: 0 5%;
+}
