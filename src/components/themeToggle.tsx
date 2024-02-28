@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ThemeContext } from '@context/themeContext';
-import * as styles from '@styles/global.module.scss';
+import * as styles from '@styles/main.module.scss';
 
 const ThemeToggle: React.FC = () => {
 

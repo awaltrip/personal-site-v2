@@ -1,7 +1,7 @@
 import * as React from 'react';
 import skills from '@data/skills.json';
 import * as logos from '@images/logos';
-import * as styles from '@styles/global.module.scss';
+import * as styles from '@styles/main.module.scss';
 
 interface Skill {
   name: string;

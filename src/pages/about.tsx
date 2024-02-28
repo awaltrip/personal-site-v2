@@ -2,7 +2,7 @@ import * as React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
 import { Layout, Seo } from '@components';
 import skills from '@data/aboutSkills.json';
-import * as styles from '@styles/global.module.scss';
+import * as styles from '@styles/main.module.scss';
 
 const AboutPage: React.FC<PageProps> = () => {
   return (

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import * as styles from '@styles/global.module.scss';
+import * as styles from '@styles/main.module.scss';
 
 const navLinks = [
   {

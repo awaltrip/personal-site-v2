@@ -3,7 +3,7 @@ import { graphql, useStaticQuery, type HeadFC, type PageProps } from 'gatsby';
 import { getImage, GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Carousel, Layout, Seo } from '@components';
-import * as styles from '@styles/global.module.scss';
+import * as styles from '@styles/main.module.scss';
 
 interface Edge {
   node: {

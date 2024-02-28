@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { AnimatePresence, motion } from 'framer-motion';
-import * as styles from '@styles/global.module.scss';
+import * as styles from '@styles/main.module.scss';
 
 interface CarouselProps {
   images: IGatsbyImageData[];

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link, HeadFC, PageProps } from 'gatsby';
 import { Layout } from '@components';
-import * as styles from '@styles/global.module.scss';
+import * as styles from '@styles/main.module.scss';
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (

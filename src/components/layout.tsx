@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Nav, ThemeToggle } from '@components';
-import * as styles from '@styles/global.module.scss';
+import * as styles from '@styles/main.module.scss';
 
 interface Props {
   heading: String;
