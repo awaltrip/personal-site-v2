@@ -1,11 +1,8 @@
 import * as React from 'react';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { AnimatePresence, motion } from 'framer-motion';
 import * as styles from '@styles/main.module.scss';
-
-interface CarouselProps {
-  images: IGatsbyImageData[];
-}
+import { CarouselProps, MOTION_VARIANTS } from '@utils/carousel';
 
 const Carousel: React.FC<CarouselProps> = ({ images }) => {
 
@@ -25,59 +22,12 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
     setIndex(i);
   };
 
-  const slideVariants = {
-    hiddenRight: {
-      x: '100%',
-      y: '0',
-      opacity: 0
-    },
-    hiddenLeft: {
-      x: '-100%',
-      y: '0',
-      opacity: 0
-    },
-    visible: {
-      x: '0',
-      y: '0',
-      opacity: 1,
-      transition: {
-        duration: 0.5
-      }
-    },
-    exit: {
-      opacity: 0,
-      scale: 0.8,
-      transition: {
-        duration: 0.2
-      }
-    }
-  };
-  const arrowVariants = {
-    hover: {
-      scale: 1.2
-    }
-  };
-  const dotsVariants = {
-    initial: {
-      y: 0
-    },
-    animate: {
-      y: -10,
-      scale: 1.3,
-      transition: { duration: 0.3 }
-    },
-    hover: {
-      scale: 1.3,
-      transition: { duration: 0.3 }
-    }
-  };
-
   return (
     <div className={styles.carousel}>
       <AnimatePresence>
         <motion.div
           key={index}
-          variants={slideVariants}
+          variants={MOTION_VARIANTS.SLIDE}
           initial={direction === 'right' ? 'hiddenRight' : 'hiddenLeft'}
           animate="visible"
           exit="exit"
@@ -93,7 +43,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
         <motion.div 
           className={styles.carouselLeft}
           onClick={handlePrevious}
-          variants={arrowVariants}
+          variants={MOTION_VARIANTS.ARROW}
           whileHover="hover"
         >
           <svg
@@ -108,7 +58,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
         <motion.div 
           className={styles.carouselRight} 
           onClick={handleNext}
-          variants={arrowVariants}
+          variants={MOTION_VARIANTS.ARROW}
           whileHover="hover"
         >
           <svg
@@ -127,7 +77,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             key={i}
             className={`${styles.dot} ${index === i ? styles.active : ''}`}
             onClick={() => handleDotClick(i)}
-            variants={dotsVariants}
+            variants={MOTION_VARIANTS.DOT}
             initial="initial"
             animate={index === i ? 'animate' : ''}
             whileHover="hover"

@@ -1,72 +1,10 @@
 import * as React from 'react';
-import { graphql, useStaticQuery, type HeadFC, type PageProps } from 'gatsby';
-import { getImage, GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { type HeadFC, type PageProps } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Carousel, Layout, Seo } from '@components';
 import * as styles from '@styles/main.module.scss';
-
-interface Edge {
-  node: {
-    id: string;
-    name: string;
-    childImageSharp: {
-      gatsbyImageData: IGatsbyImageData;
-    }
-  }
-}
-
-const getImageData = (): Edge[] => {
-  const data = useStaticQuery(graphql`
-    {
-      allFile(
-        filter: {
-          extension: { regex: "/(jpg)|(png)/" },
-          relativeDirectory: { eq: "projects" }  # relative to src/images per gatsby-config
-        }
-      ) {
-        edges {
-          node {
-            id
-            name
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-      }
-    }
-  `);
-  return data?.allFile.edges;
-};
-
-const getImages = (): IGatsbyImageData[] => {
-  const imageEdges = getImageData();
-  const images = imageEdges?.sort((a, b) => (a.node?.name > b.node?.name) ? 1 : -1)
-    .map((edge: Edge) => getImage(edge.node))
-    .filter(image => typeof image !== 'undefined');
-  return (images as IGatsbyImageData[]) || [];
-};
-
-const modalVariants = {
-  bottom: {
-    y: '-100%',
-    opacity: 0
-  },
-  visible: {
-    y: '0',
-    opacity: 1,
-    transition: {
-      duration: 0.3
-    }
-  },
-  exit: {
-    opacity: 0,
-    scale: 0.8,
-    transition: {
-      duration: 0.2
-    }
-  }
-};
+import * as utils from '@utils/projects';
 
 const ProjectsPage: React.FC<PageProps> = () => {
 
@@ -80,7 +18,7 @@ const ProjectsPage: React.FC<PageProps> = () => {
     }
   };
 
-  const images = getImages();
+  const images = utils.getImages();
 
   return (
     <Layout heading="Things I've built">
@@ -125,7 +63,7 @@ const ProjectsPage: React.FC<PageProps> = () => {
           {isModalOpen && (<motion.div
             id="modal"
             className={styles.modal}
-            variants={modalVariants}
+            variants={utils.MODAL_VARIANTS}
             initial="bottom"
             animate="visible"
             exit="exit"

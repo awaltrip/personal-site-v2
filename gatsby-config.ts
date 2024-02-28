@@ -32,7 +32,8 @@ const config: GatsbyConfig = {
           '@data': path.resolve(__dirname, 'src/data'),
           '@images': path.resolve(__dirname, 'src/images'),
           '@pages': path.resolve(__dirname, 'src/pages'),
-          '@styles': path.resolve(__dirname, 'src/styles')
+          '@styles': path.resolve(__dirname, 'src/styles'),
+          '@utils': path.resolve(__dirname, 'src/utils')
         },
         extensions: ['tsx', 'ts']
       }
