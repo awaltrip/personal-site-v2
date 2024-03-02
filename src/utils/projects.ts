@@ -40,6 +40,7 @@ export const getImageData = (): Edge[] => {
           extension: { regex: "/(jpg)|(png)/" },
           relativeDirectory: { eq: "projects" }  # relative to src/images per gatsby-config
         }
+        sort: { name: ASC }
       ) {
         edges {
           node {
@@ -59,8 +60,7 @@ export const getImageData = (): Edge[] => {
 
 export const getImages = (): IGatsbyImageData[] => {
   const imageEdges = getImageData();
-  const images = imageEdges?.sort((a, b) => (a.node?.name > b.node?.name) ? 1 : -1)
-    .map((edge: Edge) => getImage(edge.node))
+  const images = imageEdges?.map((edge: Edge) => getImage(edge.node))
     .filter(image => typeof image !== 'undefined');
   return (images as IGatsbyImageData[]) || [];
 };
