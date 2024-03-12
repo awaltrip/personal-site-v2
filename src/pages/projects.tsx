@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { type HeadFC, type PageProps } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image';
+import DOMPurify from 'dompurify';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Carousel, Layout, Seo } from '@components';
 import * as styles from '@styles/main.module.scss';
@@ -32,8 +33,8 @@ const ProjectsPage: React.FC<PageProps> = () => {
             <h2 id={project.frontmatter.id}>
               {project.frontmatter.title}
             </h2>
-            <p className={styles.projectDescription} 
-              dangerouslySetInnerHTML={{__html: project.body}}
+            <p className={styles.projectDescription}
+              dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(project.body)}}
             >
             </p>
             <ul className={styles.projectSkills}>
