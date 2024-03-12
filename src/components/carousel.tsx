@@ -2,12 +2,14 @@ import * as React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { AnimatePresence, motion } from 'framer-motion';
 import * as styles from '@styles/main.module.scss';
-import { CarouselProps, MOTION_VARIANTS } from '@utils/carousel';
+import { CarouselProps, MOTION_VARIANTS, getImages } from '@utils/carousel';
 
-const Carousel: React.FC<CarouselProps> = ({ images }) => {
+const Carousel: React.FC<CarouselProps> = ({ imageData }) => {
+
+  const images = getImages(imageData);
 
   const [index, setIndex] = React.useState(0);
-  const [direction, setDirection] = React.useState('left');
+  const [direction, setDirection] = React.useState('right');
 
   const handleNext = (): void => {
     setDirection('right');
@@ -78,8 +80,8 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             className={`${styles.dot} ${index === i ? styles.active : ''}`}
             onClick={() => handleDotClick(i)}
             variants={MOTION_VARIANTS.DOT}
-            initial="initial"
             animate={index === i ? 'animate' : ''}
+            initial="initial"
             whileHover="hover"
           ></motion.div>
         ))}

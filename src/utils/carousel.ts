@@ -1,7 +1,7 @@
-import { IGatsbyImageData } from 'gatsby-plugin-image';
+import { IGatsbyImageData, ImageDataLike, getImage } from 'gatsby-plugin-image';
 
 export interface CarouselProps {
-  images: IGatsbyImageData[];
+  imageData: ImageDataLike[];
 }
 
 export const MOTION_VARIANTS = {
@@ -51,4 +51,10 @@ export const MOTION_VARIANTS = {
       }
     }
   }
+};
+
+export const getImages = (images: ImageDataLike[]): IGatsbyImageData[] => {
+  const imageData = images?.map(image => getImage(image))
+    .filter(image => typeof image !== 'undefined');
+  return (imageData as IGatsbyImageData[]) || [];
 };

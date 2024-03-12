@@ -1,13 +1,16 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { getImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { ImageDataLike } from 'gatsby-plugin-image';
 
-export interface Edge {
-  node: {
+export interface ProjectNode {
+  body: any;
+  frontmatter: {
+    date: number;
+    external: string;
+    github: string;
     id: string;
-    name: string;
-    childImageSharp: {
-      gatsbyImageData: IGatsbyImageData;
-    }
+    title: string;
+    skills: string[];
+    images: ImageDataLike[];
   }
 }
 
@@ -32,22 +35,23 @@ export const MODAL_VARIANTS = {
   }
 };
 
-export const getImageData = (): Edge[] => {
+export const getProjectData = (): ProjectNode[] => {
   const data = useStaticQuery(graphql`
     {
-      allFile(
-        filter: {
-          extension: { regex: "/(jpg)|(png)/" },
-          relativeDirectory: { eq: "projects" }  # relative to src/images per gatsby-config
-        }
-        sort: { name: ASC }
-      ) {
-        edges {
-          node {
+      allMdx {
+        nodes {
+          body
+          frontmatter {
+            date
+            external
+            github
             id
-            name
-            childImageSharp {
-              gatsbyImageData
+            title
+            skills
+            images {
+              childImageSharp {
+                gatsbyImageData(width: 800)
+              }
             }
           }
         }
@@ -55,12 +59,5 @@ export const getImageData = (): Edge[] => {
     }
   `);
 
-  return data?.allFile.edges;
-};
-
-export const getImages = (): IGatsbyImageData[] => {
-  const imageEdges = getImageData();
-  const images = imageEdges?.map((edge: Edge) => getImage(edge.node))
-    .filter(image => typeof image !== 'undefined');
-  return (images as IGatsbyImageData[]) || [];
+  return (data as any)?.allMdx?.nodes;
 };
