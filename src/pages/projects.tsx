@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { type HeadFC, type PageProps } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image';
-import DOMPurify from 'dompurify';
+import DOMPurify from 'isomorphic-dompurify';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Carousel, Layout, Seo } from '@components';
 import * as styles from '@styles/main.module.scss';
