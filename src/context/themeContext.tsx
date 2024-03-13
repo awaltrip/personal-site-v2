@@ -7,6 +7,7 @@ interface ThemeProps {
 type Theme = 'light' | 'dark';
 
 const initTheme = (typeof localStorage !== 'undefined' && localStorage.getItem('awTheme') as Theme) || 'dark';
+if (typeof document !== 'undefined') document.body.dataset.theme = initTheme;
 
 export const ThemeContext = React.createContext({
   theme: initTheme,

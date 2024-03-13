@@ -1,9 +1,16 @@
-:root, [data-theme='light'] {
+:root, [data-theme='dark'] {
+  --bg-color: #231f27;
+  --bg-color-accent: rgba(50, 230, 227, 0.5);
+  --bg-color-secondary: #392a4d;
+  --font-color-code: #8A6534;
+  --font-color-primary: #ecebe8;
+  --font-color-secondary: #32e6e2;
+  --font-color-accent: #bf6fee;
+}
+
+[data-theme='light'] {
   --bg-color: #fffefb;
-  //--bg-color-accent: rgba(165, 102, 202, 0.6);
   --bg-color-accent: rgba(96, 245, 242, 0.7);
-  //--bg-color-secondary: #abe3f1;
-  //--bg-color-secondary: #dbc7f7;
   --bg-color-secondary: #f3e9db;
   --font-color-code: #8A6534;
   --font-color-primary: #36313d;
@@ -12,15 +19,4 @@
   --font-family-mono: 'Sometype Mono', 'Fira Code', 'Courier New', monospace;
   --font-family-sans: 'Inter', 'Segoe UI', -apple-system, system-ui, sans-serif, 'Apple Color Emoji', 
     'Segoe UI Emoji', 'Segoe UI Symbol';
-}
-
-[data-theme='dark'] {
-  --bg-color: #231f27;
-  //--bg-color-accent: rgba(142, 85, 175, 0.6);
-  --bg-color-accent: rgba(50, 230, 227, 0.5);
-  --bg-color-secondary: #392a4d;
-  --font-color-code: #8A6534;
-  --font-color-primary: #ecebe8;
-  --font-color-secondary: #32e6e2;
-  --font-color-accent: #bf6fee;
 }
