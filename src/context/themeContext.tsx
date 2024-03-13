@@ -6,7 +6,7 @@ interface ThemeProps {
 
 type Theme = 'light' | 'dark';
 
-const initTheme = (localStorage.getItem('awTheme') as Theme) || 'dark';
+const initTheme = (typeof localStorage !== 'undefined' && localStorage.getItem('awTheme') as Theme) || 'dark';
 
 export const ThemeContext = React.createContext({
   theme: initTheme,
@@ -18,8 +18,10 @@ export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
   const [theme, setTheme] = React.useState(initTheme);
 
   React.useEffect(() => {
-    if (typeof document !== 'undefined') document.body.dataset.theme = theme;
-    localStorage.setItem('awTheme', theme);
+    if (typeof document !== 'undefined') {
+      document.body.dataset.theme = theme;
+      localStorage.setItem('awTheme', theme);
+    }
   }, [theme, setTheme]);
 
   return (
