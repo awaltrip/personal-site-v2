@@ -6,13 +6,7 @@ interface ThemeProps {
 
 type Theme = 'light' | 'dark';
 
-let initTheme: Theme = 'dark';
-if (typeof window !== 'undefined') {
-  // initialize theme based on user's device settings
-  initTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  // set initial data-theme attribute on body element -- see themes.scss
-  document.body.dataset.theme = initTheme;
-}
+const initTheme = (localStorage.getItem('awTheme') as Theme) || 'dark';
 
 export const ThemeContext = React.createContext({
   theme: initTheme,
@@ -22,6 +16,11 @@ export const ThemeContext = React.createContext({
 export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
 
   const [theme, setTheme] = React.useState(initTheme);
+
+  React.useEffect(() => {
+    if (typeof document !== 'undefined') document.body.dataset.theme = theme;
+    localStorage.setItem('awTheme', theme);
+  }, [theme, setTheme]);
 
   return (
     <ThemeContext.Provider value={{ theme: theme, updateTheme: setTheme }}>
