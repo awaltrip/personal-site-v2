@@ -1,30 +1,27 @@
 import * as React from 'react';
-import { ThemeContext } from '@context/themeContext';
+import { useTheme } from '@context/themeContext';
 import * as styles from '@styles/main.module.scss';
 
 const ThemeToggle: React.FC = () => {
+
+  const { theme, updateTheme } = useTheme();
+  const [icon, setIcon] = React.useState(theme === 'light' ? 'moon' : 'sun');
+
+  React.useEffect(() => setIcon(theme === 'light' ? 'moon' : 'sun'), [theme]);
+
+  const changeTheme = () => updateTheme(theme === 'light' ? 'dark' : 'light');
+
   return (
-    <ThemeContext.Consumer>
-      {({ theme, updateTheme }) => {
-
-        console.log('THEME ', theme);
-
-        const changeTheme = () => updateTheme(theme === 'light' ? 'dark' : 'light');
-
-        return (
-          <div className={styles.themeToggle}
-            role="button"
-            tabIndex={0}
-            aria-label={`Toggle ${(theme as string) === 'light' ? 'dark' : 'light'} mode`}
-            onClick={changeTheme}
-            onKeyDown={event => { if (event.key === 'Enter') changeTheme(); }}
-          >
-            <i className={`uil ${(theme as string) === 'light' ? 'uil-moon' : 'uil-sun'}`}></i>
-          </div>
-        );
-      }}
-    </ThemeContext.Consumer>
+    <div className={styles.themeToggle}
+      role="button"
+      tabIndex={0}
+      aria-label={`Toggle ${theme === 'light' ? 'dark' : 'light'} mode`}
+      onClick={changeTheme}
+      onKeyDown={event => { if (event.key === 'Enter') changeTheme(); }}
+    >
+      <i className={`uil uil-${icon}`}></i>
+    </div>
   );
-};
+}
 
 export default ThemeToggle;

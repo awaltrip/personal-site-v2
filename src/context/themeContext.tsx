@@ -14,6 +14,8 @@ export const ThemeContext = React.createContext({
   updateTheme: (theme: Theme) => {}
 });
 
+export const useTheme = () => React.useContext(ThemeContext);
+
 export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
 
   const [theme, setTheme] = React.useState(initTheme);
@@ -23,7 +25,7 @@ export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
       document.body.dataset.theme = theme;
       localStorage.setItem('awTheme', theme);
     }
-  }, [theme, setTheme]);
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme: theme, updateTheme: setTheme }}>
