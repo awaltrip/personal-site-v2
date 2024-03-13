@@ -6,6 +6,9 @@
   --font-color-primary: #ecebe8;
   --font-color-secondary: #32e6e2;
   --font-color-accent: #bf6fee;
+  --font-family-mono: 'Sometype Mono', 'Fira Code', 'Courier New', monospace;
+  --font-family-sans: 'Inter', 'Segoe UI', -apple-system, system-ui, sans-serif, 'Apple Color Emoji', 
+    'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 [data-theme='light'] {
@@ -16,7 +19,4 @@
   --font-color-primary: #36313d;
   --font-color-secondary: #338399;
   --font-color-accent: #8954A8;
-  --font-family-mono: 'Sometype Mono', 'Fira Code', 'Courier New', monospace;
-  --font-family-sans: 'Inter', 'Segoe UI', -apple-system, system-ui, sans-serif, 'Apple Color Emoji', 
-    'Segoe UI Emoji', 'Segoe UI Symbol';
 }
