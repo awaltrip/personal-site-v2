@@ -7,7 +7,9 @@ const ThemeToggle: React.FC = () => {
     <ThemeContext.Consumer>
       {({ theme, updateTheme }) => {
 
-        const changeTheme = () => updateTheme(theme === 'light' ? 'dark' : 'light')
+        console.log('THEME ', theme);
+
+        const changeTheme = () => updateTheme(theme === 'light' ? 'dark' : 'light');
 
         return (
           <div className={styles.themeToggle}
