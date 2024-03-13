@@ -7,6 +7,31 @@ framework, and hosted with [Netlify](https://www.netlify.com/).
 
 Currently, it's still very much a work in progress 😊
 
+## Technologies and features
+
+### Techs:
+
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) &nbsp; ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) &nbsp; ![Gatsby](https://img.shields.io/badge/Gatsby-%23663399.svg?style=for-the-badge&logo=gatsby&logoColor=white) &nbsp; ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white) &nbsp; ![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white) &nbsp; ![CSS 3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) &nbsp; ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white) &nbsp; ![HTML 5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) &nbsp; ![Framer](https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue) &nbsp; ![MDX](https://img.shields.io/badge/MDX-1B1F24?style=for-the-badge&logo=MDX&logoColor=white) &nbsp; ![JSON](https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white)
+
+### Features:
+
+- Gatsby SPA with pages: Home, About, Skills, Projects, Contact, 404
+- Fully responsive image carousels to showcase projects
+- Page content stored in MDX and retrieved with GraphQL
+- Dark/light theme
+- Auto-load theme based on localStorage
+- Relevant meta tags to boost SEO
+- Accessible / WCAG compliant
+
+### Backlog:
+
+- Mobile view / 100% responsive
+- Contact form
+- Additional projects
+- Sorting features on skills page
+- A few more themes beyond "light" and "dark"
+- Site logo and improved styles
+
 ## 💻 Dev setup
 
 1. Install the latest LTS version of [Node.js](https://nodejs.org/en/download/)
