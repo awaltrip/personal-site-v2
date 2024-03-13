@@ -15,11 +15,11 @@ const ThemeToggle: React.FC = () => {
           <div className={styles.themeToggle}
             role="button"
             tabIndex={0}
-            aria-label={`Toggle ${theme === 'light' ? 'dark' : 'light'} mode`}
+            aria-label={`Toggle ${(theme as string) === 'light' ? 'dark' : 'light'} mode`}
             onClick={changeTheme}
             onKeyDown={event => { if (event.key === 'Enter') changeTheme(); }}
           >
-            <i className={`uil ${theme === 'light' ? 'uil-moon' : 'uil-sun'}`}></i>
+            <i className={`uil ${(theme as string) === 'light' ? 'uil-moon' : 'uil-sun'}`}></i>
           </div>
         );
       }}
