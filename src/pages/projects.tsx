@@ -68,7 +68,7 @@ const ProjectsPage: React.FC<PageProps> = () => {
               exit="exit"
             >
               <div className={styles.modalContent}>
-                <span className={styles.modalClose} onClick={() => setIsModalOpen(false)}>&times;</span>
+                <i className={`uil uil-times ${styles.modalClose}`} onClick={() => setIsModalOpen(false)}></i>
                 <Carousel imageData={project.frontmatter.images} />
               </div>
             </motion.div>)}

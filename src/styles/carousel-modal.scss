@@ -75,6 +75,8 @@
 
 .modal {
   background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: 8px;
   display: none;
   left: 5%;
@@ -83,7 +85,7 @@
   min-height: 90%;
   overflow: auto;
   position: absolute;
-  z-index: 99;
+  z-index: 9999;
 
   @media (max-width: 1200px) {
     right: 5%;
@@ -96,7 +98,6 @@
   justify-content: right;
   color: var(--font-color-accent);
   font-size: 40px;
-  font-weight: bold;
   height: 64px;
   width: 100%;
   transition: color 0.3s ease;
