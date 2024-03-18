@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Nav, ThemeToggle } from '@components';
+import { Nav } from '@components';
 import * as styles from '@styles/main.module.scss';
 
 interface Props {
@@ -13,7 +13,6 @@ const Layout: React.FC<Props> = ({ heading, children, headingAccent }) => {
     <>
       <header>
         <Nav />
-        <ThemeToggle />
       </header>
       <main className={styles.container}>
         <h1 className={styles.heading}>

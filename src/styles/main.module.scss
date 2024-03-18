@@ -124,15 +124,64 @@ main {
   margin: 64px 0;
 }
 
+nav {
+  z-index: 999;
+
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: var(--bg-color-secondary-tran);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    width: 67%;
+    height: 100%;
+    padding: 6rem 3rem 0;
+    transition: right 0.4s;
+
+    &.nav-show {
+      right: 0;
+    }
+  }
+}
+
+.nav-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 9999;
+ }
+
+.nav-close,
+.nav-toggle {
+  font-size: 2rem;
+  color: var(--font-color-primary);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  pointer-events: all;
+
+  &:hover,
+  &:focus {
+    color: var(--font-color-secondary);
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
 .nav-links {
   display: flex;
+  flex-direction: row;
+  column-gap: 2rem;
   justify-content: right;
   list-style: none;
   padding-left: 0;
-}
 
-.nav-link-item {
-  margin-left: 2rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    row-gap: 2rem;
+  }
 }
 
 .nav-link-text {
@@ -204,10 +253,9 @@ select {
 }
 
 .theme-toggle {
-  @extend .nav-link-item;
   color: var(--font-color-primary);
   cursor: pointer;
-  margin-right: 80px;
+  margin: auto 2rem;
   transition: color 0.3s ease;
 
   &:hover,
@@ -215,7 +263,7 @@ select {
     color: var(--font-color-secondary);
   }
 
-  @media (max-width: 1400px) {
+  @media (min-width: 768px) and (max-width: 1400px) {
     margin-right: 0;
   }
 }
