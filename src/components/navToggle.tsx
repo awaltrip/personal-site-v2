@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import { NavToggleProps, LINE_PROPS, LINE_VARIANTS } from '@utils/navToggle';
+import { NavToggleProps, LINE_PROPS, LINE_VARIANTS } from '@utils/nav';
 
 const NavToggle: React.FC<NavToggleProps> = ({ isOpen = false, ...props }) => {
   return (

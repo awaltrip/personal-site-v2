@@ -1,4 +1,10 @@
+import { graphql, useStaticQuery } from 'gatsby';
 import { SVGMotionProps } from 'framer-motion';
+
+export interface NavLink {
+  name: string;
+  path: string;
+}
 
 export interface NavToggleProps extends SVGMotionProps<SVGSVGElement> {
   isOpen: boolean;
@@ -45,4 +51,21 @@ export const LINE_VARIANTS = {
       translateY: -2
     }
   }
+};
+
+export const getNavLinks = (): NavLink[] => {
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          navLinks {
+            name
+            path
+          }
+        }
+      }
+    }
+  `);
+
+  return site?.siteMetadata.navLinks;
 };
