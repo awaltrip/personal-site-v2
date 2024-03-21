@@ -16,7 +16,8 @@ Currently, it's still very much a work in progress 😊
 ### Features:
 
 - Gatsby SPA with pages: Home, About, Skills, Projects, Contact, 404
-- Fully responsive image carousels to showcase projects
+- Fully responsive for desktop and mobile devices
+- Responsive image carousels to showcase projects
 - Page content stored in MDX and retrieved with GraphQL
 - Dark/light theme
 - Auto-load theme based on localStorage
@@ -25,7 +26,6 @@ Currently, it's still very much a work in progress 😊
 
 ### Backlog:
 
-- Mobile view / 100% responsive
 - Contact form
 - Additional projects
 - Sorting features on skills page

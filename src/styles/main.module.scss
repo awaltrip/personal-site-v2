@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap');
-@import 'https://unicons.iconscout.com/release/v4.0.0/css/line.css';
+@import url('https://unicons.iconscout.com/release/v4.0.0/css/line.css');
 @import './carousel-modal.scss';
 @import './project-section.scss';
 @import './themes.scss';
@@ -113,6 +113,7 @@ header {
 
 .list-item {
   padding: 0 10px;
+
   &::marker {
     content: '▹';
     font-weight: bold;
@@ -134,8 +135,9 @@ nav {
     background-color: var(--bg-color-secondary-tran);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    width: 67%;
+    font-size: 20px;
     height: 100%;
+    width: 67%;
     padding: 6rem 3rem 0;
     transition: right 0.4s;
 
@@ -145,27 +147,20 @@ nav {
   }
 }
 
-.nav-close {
-  position: absolute;
-  top: 1.5rem;
-  right: 2rem;
-  z-index: 9999;
- }
-
-.nav-close,
 .nav-toggle {
   font-size: 2rem;
   color: var(--font-color-primary);
   cursor: pointer;
   transition: color 0.3s ease;
   pointer-events: all;
+  z-index: 9999;
 
   &:hover,
   &:focus {
     color: var(--font-color-secondary);
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     display: none;
   }
 }
@@ -187,7 +182,7 @@ nav {
 .nav-link-text {
   @extend .link;
   color: var(--font-color-primary);
-  font-weight: normal;
+  font-weight: 500;
 }
 
 p {
@@ -255,6 +250,7 @@ select {
 .theme-toggle {
   color: var(--font-color-primary);
   cursor: pointer;
+  font-size: 18px;
   margin: auto 2rem;
   transition: color 0.3s ease;
 
@@ -263,7 +259,7 @@ select {
     color: var(--font-color-secondary);
   }
 
-  @media (min-width: 768px) and (max-width: 1400px) {
+  @media (min-width: 769px) and (max-width: 1400px) {
     margin-right: 0;
   }
 }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import { ThemeToggle } from '@components';
+import { NavToggle, ThemeToggle } from '@components';
 import * as styles from '@styles/main.module.scss';
 
 interface NavLink {
@@ -40,14 +40,15 @@ const Nav: React.FC = () => {
             </li>
           )}
         </ul>
-        <i className={`uil uil-times ${styles.navClose}`}
-          style={showNav ? {} : {display: 'none'}}
-          onClick={() => setShowNav(false)}
-        ></i>
       </nav>
-      <ThemeToggle />
-      <div className={styles.navToggle} onClick={() => setShowNav(true)}>
-        <i className="uil uil-bars"></i>
+      <div className={styles.themeToggle} style={showNav ? { margin: 'auto 62px' } : {}}>
+        <ThemeToggle />
+      </div>
+      <div className={styles.navToggle} 
+        onClick={() => setShowNav(!showNav)}
+        style={showNav ? { position: 'fixed' } : {}}
+      >
+        <NavToggle isOpen={showNav} />
       </div>
     </>
   );

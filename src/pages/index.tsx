@@ -9,7 +9,6 @@ const IndexPage: React.FC<PageProps> = () => {
       <p>This site is currently a work in progress, but you can check out the navigation links above.</p>
       <p>Features coming soon:</p>
       <ul>
-        <li>Mobile view</li>
         <li>Contact form</li>
         <li>Additional projects</li>
         <li>Sorting features on skills page</li>
