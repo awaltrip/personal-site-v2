@@ -51,7 +51,7 @@ const ProjectsPage: React.FC<PageProps> = () => {
               </a>
             </p>
           </div>
-          <div className={styles.projectImg} onClick={(event) => {event.stopPropagation(); setIsModalOpen(true);}}>
+          <div className={styles.projectImg} onClick={(event) => { event.stopPropagation(); setIsModalOpen(true); }}>
             <div className={styles.projectImgOverlay}></div>
             <GatsbyImage
               alt={`${project.frontmatter.title} screenshot`}
