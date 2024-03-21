@@ -28,9 +28,17 @@ const getNavLinks = (): NavLink[] => {
 const Nav: React.FC = () => {
   const [showNav, setShowNav] = React.useState(false);
 
+  if (typeof window !== 'undefined') window.onclick = (event: MouseEvent): void => {
+    const nav = document.getElementById('nav');
+    if (nav && showNav && !nav.contains(event.target as Node)) {
+      event.preventDefault();
+      setShowNav(false);
+    }
+  }
+
   return (
     <>
-      <nav className={showNav ? styles.navShow : ''}>
+      <nav id="nav" className={showNav ? styles.navShow : ''}>
         <ul className={styles.navLinks}>
           {getNavLinks()?.map((navLink, i) =>
             <li className={styles.navLinkItem} key={i}>
@@ -45,7 +53,7 @@ const Nav: React.FC = () => {
         <ThemeToggle />
       </div>
       <div className={styles.navToggle} 
-        onClick={() => setShowNav(!showNav)}
+        onClick={(event) => { event.stopPropagation(); setShowNav(!showNav); }}
         style={showNav ? { position: 'fixed' } : {}}
       >
         <NavToggle isOpen={showNav} />
