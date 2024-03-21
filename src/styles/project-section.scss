@@ -33,6 +33,8 @@
 
   .project-img-overlay {
     background-color: var(--bg-color-accent);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
     border-radius: 5px;
     position: absolute;
     height: 100%;
@@ -54,6 +56,8 @@
 
     .project-img-overlay {
       background-color: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
     }
 
     img {

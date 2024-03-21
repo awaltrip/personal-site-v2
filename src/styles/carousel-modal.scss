@@ -75,8 +75,8 @@
 
 .modal {
   background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   border-radius: 8px;
   display: none;
   left: 5%;
