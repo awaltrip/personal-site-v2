@@ -1,12 +1,11 @@
 .project-content {
   max-width: 600px;
   margin-right: -400px;
-  padding-top: 16px;
   pointer-events: none;
   width: 100%;
   z-index: 2;
 
-  @media(max-width: 1200px) {
+  @media(max-width: 768px) {
     padding-top: 8px;
   }
 }

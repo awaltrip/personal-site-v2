@@ -38,7 +38,7 @@ export const MODAL_VARIANTS = {
 export const getProjectData = (): ProjectNode[] => {
   const data = useStaticQuery(graphql`
     {
-      allMdx {
+      allMdx(sort: { frontmatter: { date: ASC }}) {
         nodes {
           body
           frontmatter {

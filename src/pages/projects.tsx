@@ -9,17 +9,27 @@ import * as utils from '@utils/projects';
 
 const ProjectsPage: React.FC<PageProps> = () => {
 
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const projects = utils.getProjectData();
+  const modalsClosed = Array(projects.length).fill(false);
 
-  if (typeof window !== 'undefined') window.onclick = (event: MouseEvent): void => {
-    const modal = document.getElementById('modal');
-    if (modal && isModalOpen && !modal.contains(event.target as Node)) {
-      event.preventDefault();
-      setIsModalOpen(false);
-    }
+  const [isModalOpen, setIsModalOpen] = React.useState(modalsClosed);
+
+  const handleOpenModal = (event: React.MouseEvent, index: number): void => { 
+    event.stopPropagation(); 
+    setIsModalOpen(isModalOpen.map((_, i) => index === i));
   }
 
-  const projects = utils.getProjectData();
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.onclick = (event: MouseEvent): void => {
+        const modal = document.getElementById('modal');
+        if (modal && !modal.contains(event.target as Node)) {
+          event.preventDefault();
+          setIsModalOpen(modalsClosed);
+        }
+      };
+    }
+  });
 
   return (
     <Layout heading="Things I've built">
@@ -38,7 +48,7 @@ const ProjectsPage: React.FC<PageProps> = () => {
             >
             </p>
             <ul className={styles.projectSkills}>
-              {project.frontmatter.skills.map((skill, i) => (
+              {project.frontmatter.skills?.map((skill, i) => (
                 <li key={i}>{skill}</li>
               ))}
             </ul>
@@ -51,15 +61,15 @@ const ProjectsPage: React.FC<PageProps> = () => {
               </a>
             </p>
           </div>
-          <div className={styles.projectImg} onClick={(event) => { event.stopPropagation(); setIsModalOpen(true); }}>
+          <div className={styles.projectImg} onClick={(event) => handleOpenModal(event, i)}>
             <div className={styles.projectImgOverlay}></div>
             <GatsbyImage
               alt={`${project.frontmatter.title} screenshot`}
-              image={(getImage(project.frontmatter.images[0]) as IGatsbyImageData)}
+              image={(getImage(project.frontmatter.images?.[0]) as IGatsbyImageData)}
             />
           </div>
           <AnimatePresence>
-            {isModalOpen && (<motion.div
+            {isModalOpen[i] && (<motion.div
               id="modal"
               className={styles.modal}
               variants={utils.MODAL_VARIANTS}
@@ -68,7 +78,7 @@ const ProjectsPage: React.FC<PageProps> = () => {
               exit="exit"
             >
               <div className={styles.modalContent}>
-                <i className={`uil uil-times ${styles.modalClose}`} onClick={() => setIsModalOpen(false)}></i>
+                <i className={`uil uil-times ${styles.modalClose}`} onClick={() => setIsModalOpen(modalsClosed)}></i>
                 <Carousel imageData={project.frontmatter.images} />
               </div>
             </motion.div>)}

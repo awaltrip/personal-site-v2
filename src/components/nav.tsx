@@ -5,6 +5,7 @@ import * as styles from '@styles/main.module.scss';
 import * as utils from '@utils/nav';
 
 const Nav: React.FC = () => {
+
   const [showNav, setShowNav] = React.useState(false);
 
   if (typeof window !== 'undefined') window.onclick = (event: MouseEvent): void => {
