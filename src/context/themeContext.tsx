@@ -10,6 +10,7 @@ const initTheme = (typeof localStorage !== 'undefined' && localStorage.getItem('
 if (typeof document !== 'undefined') document.body.dataset.theme = initTheme;
 
 export const ThemeContext = React.createContext({
+  initialSiteLoad: true,
   theme: initTheme,
   updateTheme: (theme: Theme) => {}
 });
@@ -18,7 +19,12 @@ export const useTheme = () => React.useContext(ThemeContext);
 
 export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
 
+  const [initialSiteLoad, setInitialSiteLoad] = React.useState(true);
   const [theme, setTheme] = React.useState(initTheme);
+  
+  React.useEffect(() => {
+    setTimeout(() => setInitialSiteLoad(false), 500);
+  }, []);
 
   React.useEffect(() => {
     if (typeof document !== 'undefined') {
@@ -28,7 +34,7 @@ export const ThemeProvider: React.FC<ThemeProps> = ({ children }) => {
   }, [theme]);
 
   return (
-    <ThemeContext.Provider value={{ theme: theme, updateTheme: setTheme }}>
+    <ThemeContext.Provider value={{ initialSiteLoad, theme, updateTheme: setTheme }}>
       {children}
     </ThemeContext.Provider>
   );
