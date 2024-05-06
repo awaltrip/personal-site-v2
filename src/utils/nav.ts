@@ -53,6 +53,74 @@ export const LINE_VARIANTS = {
   }
 };
 
+export const NAV_VARIANTS = {
+  NAV_LINK: {
+    hidden: { 
+      opacity: 0,
+      y: -200
+    },
+    show: { 
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.2
+      }
+    }
+  },
+  NAV_LIST: {
+    hidden: { 
+      opacity: 0,
+      y: -200
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.2,
+        staggerChildren: 0.1
+      }
+    }
+  },
+  NAV_TOGGLE: {
+    hidden: { 
+      opacity: 0,
+      y: -200
+    },
+    show: { 
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.2,
+        duration: 0.2
+      }
+    }
+  },
+  THEME_TOGGLE: {
+    hidden: { 
+      opacity: 0,
+      y: -200
+    },
+    show: { 
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.5,
+        duration: 0.2
+      }
+    }
+  },
+  STATIC: {
+    hidden: {
+      opacity: 1,
+      y: 0
+    },
+    show: { 
+      opacity: 1,
+      y: 0
+    }
+  }
+};
+
 export const getNavLinks = (): NavLink[] => {
   const { site } = useStaticQuery(graphql`
     query {
